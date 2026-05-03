@@ -20,7 +20,7 @@ def skew_label(skewness: float) -> str:
 
 
 def build_ml_assets(df: pd.DataFrame, root: Path) -> None:
-    """Correlation matrix, profiles, melted features, histogram bins."""
+    """Correlation matrix, profiles, melted numeric features."""
     num = df.select_dtypes(include=["number"]).copy()
 
     melted = (
@@ -91,84 +91,44 @@ def build_ml_assets(df: pd.DataFrame, root: Path) -> None:
     profiles = pd.DataFrame(rows)
     profiles.to_csv(root / "feature_profiles.csv", index=False)
 
-    meta = profiles[
-        ["Feature", "pandas_dtype", "Inferred_type", "skew_label", "skewness"]
-    ].rename(columns={"Inferred_type": "inferred_type"})
-    melted_enriched = melted.merge(meta, on="Feature", how="left")
 
-    parts = []
-    for _fname, grp in melted_enriched.groupby("Feature"):
-        bins = pd.cut(grp["Value"].astype(float), bins=40, duplicates="drop")
-        grp = grp.copy()
-        grp["Value_bin_mid"] = bins.map(
-            lambda iv: float(iv.mid) if isinstance(iv, pd.Interval) else np.nan
-        )
-        parts.append(grp)
-    melted_enriched = pd.concat(parts, ignore_index=True)
-    melted_enriched.to_csv(root / "housing_features_long_enriched.csv", index=False)
+def write_medhouseval_histogram(df: pd.DataFrame, root: Path, n_bins: int = 40) -> None:
+    """Pre-binned histogram for target MedHouseVal only (sklearn $100k units); Tableau bar chart."""
 
-    hist_counts = (
-        melted_enriched.dropna(subset=["Value_bin_mid"])
-        .groupby(["Feature", "Value_bin_mid"], observed=False)
-        .size()
-        .rename("BIN_COUNT")
-        .reset_index()
-        .astype({"Feature": str})
+    series = df["MedHouseVal"].astype(float).dropna()
+    if len(series) < 2:
+        return
+    binned = pd.cut(series, bins=n_bins, duplicates="drop")
+    mids = binned.map(
+        lambda iv: float(iv.mid) if isinstance(iv, pd.Interval) else np.nan
     )
-    hist_counts["bin_index"] = (
-        hist_counts.sort_values(["Feature", "Value_bin_mid"])
-        .groupby("Feature")
-        .cumcount()
-    )
-    hist_counts = hist_counts.merge(meta, on="Feature", how="left")
-    hist_counts = hist_counts[
-        [
-            "Feature",
-            "bin_index",
-            "Value_bin_mid",
-            "BIN_COUNT",
-            "pandas_dtype",
-            "inferred_type",
-            "skew_label",
-            "skewness",
-        ]
-    ]
-    hist_counts.to_csv(root / "feature_histogram_bins.csv", index=False)
-
-
-def _bin_series(values: pd.Series, n_bins: int = 40) -> pd.DataFrame:
-    """Return a per-bin count frame with bin_index (0..N-1) and value_bin_mid."""
-    bins = pd.cut(values.astype(float), bins=n_bins, duplicates="drop")
-    mids = bins.map(lambda iv: float(iv.mid) if isinstance(iv, pd.Interval) else np.nan)
-    counts = (
-        pd.DataFrame({"value_bin_mid": mids})
-        .dropna()
-        .groupby("value_bin_mid", observed=False)
+    g = pd.DataFrame({"value_bin_mid": mids}).dropna(subset=["value_bin_mid"])
+    if g.empty:
+        return
+    cnt = (
+        g.groupby("value_bin_mid", observed=False)
         .size()
         .rename("count")
         .reset_index()
-        .sort_values("value_bin_mid")
+        .sort_values("value_bin_mid", kind="mergesort")
         .reset_index(drop=True)
     )
-    counts.insert(0, "bin_index", counts.index.astype(int))
-    return counts
+    cnt.insert(0, "bin_index", np.arange(len(cnt), dtype=int))
+    cnt.to_csv(root / "medhouseval_histogram.csv", index=False)
 
 
-def write_ratio_features(df: pd.DataFrame, root: Path) -> None:
-    """Single new ratio (bedrooms_ratio) - sklearn data already pre-divides the others."""
-    ratio = (df["AveBedrms"].astype(float) / df["AveRooms"].astype(float)).dropna()
-    binned = _bin_series(ratio)
-    binned.insert(0, "Feature", "bedrooms_ratio")
-    binned = binned[["Feature", "bin_index", "value_bin_mid", "count"]]
-    binned.to_csv(root / "housing_ratio_features.csv", index=False)
-
-    scatter = pd.DataFrame(
+def write_housing_geo_map(df: pd.DataFrame, root: Path) -> None:
+    """Geographic map feeds: percentile-ranked MedHouseVal gives a fuller color ramp when values pile at the census cap."""
+    m = df["MedHouseVal"].astype(float)
+    pct = m.rank(pct=True, method="average").astype(float)
+    pd.DataFrame(
         {
-            "bedrooms_ratio": ratio.values,
-            "MedHouseVal": df.loc[ratio.index, "MedHouseVal"].astype(float).values,
+            "Latitude": df["Latitude"].astype(float),
+            "Longitude": df["Longitude"].astype(float),
+            "MedHouseVal": m,
+            "MedHouseVal_pct": pct,
         }
-    )
-    scatter.to_csv(root / "housing_ratio_scatter.csv", index=False)
+    ).to_csv(root / "housing_geo_map.csv", index=False)
 
 
 def _describe_cell_str(metric: str, raw: object) -> str:
@@ -193,7 +153,7 @@ def _describe_cell_str(metric: str, raw: object) -> str:
 
 
 def write_feature_describe(df: pd.DataFrame, root: Path) -> None:
-    """Wide CSV for spreadsheets + two long CSVs for Tableau info / describe worksheets."""
+    """Wide spreadsheet table + melted stats CSV for Tableau Describe worksheet."""
     rows = []
     for col in df.columns:
         s = df[col]
@@ -219,7 +179,6 @@ def write_feature_describe(df: pd.DataFrame, root: Path) -> None:
     desc = pd.DataFrame(rows)
     desc.to_csv(root / "feature_describe.csv", index=False)
 
-    schema_keys = ["dtype", "non_null_count", "missing_count"]
     stats_keys = [
         "count",
         "mean",
@@ -233,19 +192,9 @@ def write_feature_describe(df: pd.DataFrame, root: Path) -> None:
         "skew_label",
     ]
 
-    melted_schema = []
     melted_stats = []
     for _, r in desc.iterrows():
         fname = str(r["Feature"])
-        for rk, m in enumerate(schema_keys):
-            melted_schema.append(
-                {
-                    "Feature": fname,
-                    "stat_rank": rk,
-                    "stat": m,
-                    "cell": _describe_cell_str(m, r.get(m)),
-                }
-            )
         for rk, m in enumerate(stats_keys):
             melted_stats.append(
                 {
@@ -255,7 +204,6 @@ def write_feature_describe(df: pd.DataFrame, root: Path) -> None:
                     "cell": _describe_cell_str(m, r.get(m)),
                 }
             )
-    pd.DataFrame(melted_schema).to_csv(root / "feature_cells_schema.csv", index=False)
     pd.DataFrame(melted_stats).to_csv(root / "feature_cells_stats.csv", index=False)
 
 
@@ -289,7 +237,7 @@ def main() -> None:
     print(f"Wrote {out_path.name}")
 
     write_feature_describe(df, root)
-    print("Wrote feature_describe.csv, feature_cells_schema.csv, feature_cells_stats.csv")
+    print("Wrote feature_describe.csv, feature_cells_stats.csv")
 
     write_housing_head(df, root)
     print("Wrote housing_head.csv")
@@ -297,14 +245,16 @@ def main() -> None:
     write_housing_head_long(df, root)
     print("Wrote housing_head_long.csv")
 
+    write_medhouseval_histogram(df, root)
+    print("Wrote medhouseval_histogram.csv")
+
+    write_housing_geo_map(df, root)
+    print("Wrote housing_geo_map.csv")
+
     build_ml_assets(df, root)
     print(
-        "Wrote feature_correlations_*.csv, feature_profiles.csv, "
-        "housing_features_long*.csv, feature_histogram_bins.csv"
+        "Wrote feature_correlations_*.csv, feature_profiles.csv, housing_features_long.csv"
     )
-
-    write_ratio_features(df, root)
-    print("Wrote housing_ratio_features.csv, housing_ratio_scatter.csv")
 
 
 if __name__ == "__main__":

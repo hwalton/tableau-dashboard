@@ -1,6 +1,6 @@
 # Tableau dashboard: California housing (ML-oriented)
 
-Workbook **[`Book.twb`](Book.twb)** walks through the **Géron Chapter 2** end-to-end EDA workflow on the classical **California housing** dataset: **head / info / describe / hist / ratios / correlate**.
+Workbook **[`Book.twb`](Book.twb)** walks through the **Géron Chapter 2** end-to-end EDA workflow on the classical **California housing** dataset: **head / describe / hist / map / correlate**.
 
 ## Regenerating data
 
@@ -13,7 +13,7 @@ python get-data.py
 That script:
 
 - Downloads the dataset via **scikit-learn** and writes **`california_housing.csv`**
-- Writes the **EDA sidecar** CSVs Tableau uses (`housing_head_long.csv`, `housing_head.csv`, `feature_describe.csv`, `feature_cells_schema.csv`, `feature_cells_stats.csv`, `feature_histogram_bins.csv`, `housing_ratio_features.csv`, `housing_ratio_scatter.csv`, `feature_correlations_full.csv`, etc.)
+- Writes the **EDA sidecar** CSVs Tableau uses (`housing_head_long.csv`, `housing_head.csv`, `feature_describe.csv`, `feature_cells_stats.csv`, `medhouseval_histogram.csv`, `housing_geo_map.csv`, `feature_correlations_full.csv`, etc.)
 
 Reopen or refresh the workbook in Tableau Desktop after running it so file-based sources stay in sync.
 
@@ -44,11 +44,9 @@ Each sheet maps to a step in the textbook EDA recipe.
 | Sheet | Textbook analogue | What it shows |
 |-------|-------------------|----------------|
 | **Data preview (head)** | `housing.head()` | First 5 rows in **long format** (`housing_head_long.csv`): **Rows** = `row_id`, **Cols** = `measure`, **Text** = `SUM(value)` — avoids fragile `Measure Names` / `Multiple Values` XML. |
-| **Schema (info)** | `housing.info()` | Text crosstab from **`feature_cells_schema.csv`**: Rows = `Feature`, Cols = `stat_rank / stat`, Text = `ATTR(cell)`. Skew is intentionally absent here (`dtype`, `non_null_*`, counts only). |
-| **Describe table** | `housing.describe()` (+ skew summary) | Text crosstab from **`feature_cells_stats.csv`**: same grid pattern plus `skewness`, `skew_label`, and numeric describe metrics (avoids brittle `Measure Names` on the raw wide CSV). Wide **`feature_describe.csv`** stays for spreadsheets. |
-| **Histograms with skew flags** | `housing.hist(bins=50)` | Heatmap from `feature_histogram_bins.csv`: rows = `Feature` (with `skew_label`), columns = uniform per-feature **`bin_index` 0..N-1**, color = `SUM(BIN_COUNT)`. The shared discrete x-axis is what makes every feature actually render as a small multiple. |
-| **Ratio features** | `bedrooms_ratio = AveBedrms / AveRooms` | Histogram of the only genuinely new ratio (sklearn's `AveRooms` and `AveOccup` already encode the textbook's `rooms_per_house` and `people_per_house`). |
-| **Ratio scatter** | feature vs target | `bedrooms_ratio` vs `MedHouseVal` raw scatter from `housing_ratio_scatter.csv`. |
+| **Describe table** | `housing.info()` / `housing.describe()` | Text crosstab from **`feature_cells_stats.csv`** (Rows = `Feature`, Cols = `stat_rank / stat`, Text = **Attribute**(cell)): describe metrics plus skew. **`feature_describe.csv`** is the wide table (includes `dtype`, null counts, and describe stats together) if you prefer a spreadsheet. |
+| **MedHouseVal histogram** | `Series.hist` / bar counts | **`medhouseval_histogram.csv`** has **`bin_index`**, **`value_bin_mid`**, **`count`** only: forty equal-width **`pandas.cut`** bins over **`MedHouseVal`** alone (sklearn \$100k units; no KDE). **Rows** = **`SUM(count)`**, **Cols** = **`Bin index`** (discrete ordinal), **`Bar`** marks, tooltip **`AVG(value_bin_mid)`** for the midpoint in each bin. |
+| **Med house value heat map** | spatial EDA | One row per block group from **`housing_geo_map.csv`**: **`Latitude`** / **`Longitude`** on the axes, circles colored by **`MedHouseVal_pct`** (pandas **percentile rank** in \([0,1]\)—spreads colors when **`MedHouseVal`** stacks at the census cap—see README **Target and units**), tooltip **`MedHouseVal`** in sklearn units (\$100k). Use **Map** → map layers / background maps in Tableau as needed after opening. |
 | **ML - Correlation matrix** | feature inter-correlations | Heatmap from `feature_correlations_full.csv` with `Pearson_r` on color and label. |
 
 ---
@@ -57,11 +55,12 @@ Each sheet maps to a step in the textbook EDA recipe.
 
 **California Housing Dashboard** stacks the workflow vertically:
 
-1. Header text strip naming the six stages.
+1. Header text strip naming the five workflow beats.
 2. **Data preview (head)** full width.
-3. **Schema (info)** | **Describe table**.
-4. **Histograms with skew flags** (full width).
-5. **Ratio features** | **Ratio scatter** | **ML - Correlation matrix** (with its color legend on the side).
+3. **Describe table** (full width).
+4. **MedHouseVal histogram** (full width).
+5. **Med house value heat map** (full width).
+6. **ML - Correlation matrix** (full width, with its color legend on the side).
 
 Phone layout uses the same order as a vertical scroll.
 
@@ -76,13 +75,11 @@ Phone layout uses the same order as a vertical scroll.
 | `california_housing.csv` | Main fact table (from sklearn). |
 | `housing_head_long.csv` | Molten first 5 rows (`row_id`, `measure`, `value`) powering **Data preview (head)**. |
 | `housing_head.csv` | Same head in **wide** form (optional inspection in a spreadsheet). |
-| `feature_describe.csv` | One row per feature with dtype + describe stats (+ skew metrics); spreadsheet-friendly mirror of the summaries. |
-| `feature_cells_schema.csv` | Long/narrow `(Feature, stat_rank, stat, cell)` slice for **`Schema (info)`** (info-only columns). |
+| `feature_describe.csv` | One row per feature with dtype + null counts + describe stats (+ skew metrics); spreadsheet-friendly mirror of the summaries. |
 | `feature_cells_stats.csv` | Long/narrow slice for **`Describe table`** (describe + skew metrics as pre-formatted strings in `cell`). |
+| `medhouseval_histogram.csv` | **`bin_index`**, **`value_bin_mid`**, **`count`** for **`MedHouseVal histogram`** (single bar chart over the target). |
+| `housing_geo_map.csv` | Block-group lat/lon + **`MedHouseVal`** + **`MedHouseVal_pct`** (percentile rank) for **`Med house value heat map`**. |
 | `feature_correlations_full.csv` | Long-form correlation matrix for **ML - Correlation matrix**. |
-| `feature_histogram_bins.csv` | Binned counts + profile strings + `bin_index` for **Histograms with skew flags**. |
-| `housing_ratio_features.csv` | Histogram of `bedrooms_ratio` for **Ratio features**. |
-| `housing_ratio_scatter.csv` | Raw `bedrooms_ratio, MedHouseVal` for **Ratio scatter**. |
 | `feature_profiles.csv` | One row per column (dtype, skew, quantiles); kept as a profiling artefact. |
 
 ---

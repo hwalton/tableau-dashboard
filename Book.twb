@@ -55,60 +55,6 @@
         </objects>
       </object-graph>
     </datasource>
-    <datasource caption='Feature histogram bins (ML)' inline='true' name='federated.ml02_hist' version='18.1'>
-      <connection class='federated'>
-        <named-connections>
-          <named-connection caption='feature_histogram_bins' name='textscan.ml02_hist'>
-            <connection class='textscan' directory='/Users/walton/Git/tableau-dashboard' filename='feature_histogram_bins.csv' password='' server='' />
-          </named-connection>
-        </named-connections>
-        <relation connection='textscan.ml02_hist' name='feature_histogram_bins.csv' table='[feature_histogram_bins#csv]' type='table'>
-          <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
-            <column datatype='string' name='Feature' ordinal='0' />
-            <column datatype='integer' name='bin_index' ordinal='1' />
-            <column datatype='real' name='Value_bin_mid' ordinal='2' />
-            <column datatype='integer' name='BIN_COUNT' ordinal='3' />
-            <column datatype='string' name='pandas_dtype' ordinal='4' />
-            <column datatype='string' name='inferred_type' ordinal='5' />
-            <column datatype='string' name='skew_label' ordinal='6' />
-            <column datatype='real' name='skewness' ordinal='7' />
-          </columns>
-        </relation>
-      </connection>
-      <aliases enabled='yes' />
-      <column caption='Feature name' datatype='string' name='[Feature]' role='dimension' type='nominal' />
-      <column caption='Bin index' datatype='integer' name='[bin_index]' role='dimension' type='ordinal' />
-      <column caption='Value bin midpoint' datatype='real' name='[Value_bin_mid]' role='measure' type='quantitative' />
-      <column datatype='integer' name='[BIN_COUNT]' role='measure' type='quantitative' />
-      <column caption='pandas dtype' datatype='string' name='[pandas_dtype]' role='dimension' type='nominal' />
-      <column caption='inferred type (pandas)' datatype='string' name='[inferred_type]' role='dimension' type='nominal' />
-      <column datatype='string' name='[skew_label]' role='dimension' type='nominal' />
-      <column datatype='real' default-format='#0.00' name='[skewness]' role='measure' type='quantitative' />
-      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
-      <semantic-values>
-        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
-      </semantic-values>
-      <object-graph>
-        <objects>
-          <object caption='feature_histogram_bins.csv' id='feat_hist_MLBIN02'>
-            <properties context=''>
-              <relation connection='textscan.ml02_hist' name='feature_histogram_bins.csv' table='[feature_histogram_bins#csv]' type='table'>
-                <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
-                  <column datatype='string' name='Feature' ordinal='0' />
-                  <column datatype='integer' name='bin_index' ordinal='1' />
-                  <column datatype='real' name='Value_bin_mid' ordinal='2' />
-                  <column datatype='integer' name='BIN_COUNT' ordinal='3' />
-                  <column datatype='string' name='pandas_dtype' ordinal='4' />
-                  <column datatype='string' name='inferred_type' ordinal='5' />
-                  <column datatype='string' name='skew_label' ordinal='6' />
-                  <column datatype='real' name='skewness' ordinal='7' />
-                </columns>
-              </relation>
-            </properties>
-          </object>
-        </objects>
-      </object-graph>
-    </datasource>
     <datasource caption='Housing head (preview)' inline='true' name='federated.head01' version='18.1'>
       <connection class='federated'>
         <named-connections>
@@ -137,41 +83,6 @@
           <object caption='housing_head_long.csv' id='housing_head_LONG01'>
             <properties context=''>
               <relation connection='textscan.head01' name='housing_head_long.csv' table='[housing_head_long#csv]' type='table' />
-            </properties>
-          </object>
-        </objects>
-      </object-graph>
-    </datasource>
-    <datasource caption='Feature schema (info)' inline='true' name='federated.cells_schema' version='18.1'>
-      <connection class='federated'>
-        <named-connections>
-          <named-connection caption='feature_cells_schema' name='textscan.cells_schema'>
-            <connection class='textscan' directory='/Users/walton/Git/tableau-dashboard' filename='feature_cells_schema.csv' password='' server='' />
-          </named-connection>
-        </named-connections>
-        <relation connection='textscan.cells_schema' name='feature_cells_schema.csv' table='[feature_cells_schema#csv]' type='table'>
-          <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
-            <column datatype='string' name='Feature' ordinal='0' />
-            <column datatype='integer' name='stat_rank' ordinal='1' />
-            <column datatype='string' name='stat' ordinal='2' />
-            <column datatype='string' name='cell' ordinal='3' />
-          </columns>
-        </relation>
-      </connection>
-      <aliases enabled='yes' />
-      <column datatype='string' name='[Feature]' role='dimension' type='nominal' />
-      <column caption='Stat rank' datatype='integer' name='[stat_rank]' role='dimension' type='ordinal' />
-      <column datatype='string' name='[stat]' role='dimension' type='nominal' />
-      <column datatype='string' name='[cell]' role='dimension' type='nominal' />
-      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
-      <semantic-values>
-        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
-      </semantic-values>
-      <object-graph>
-        <objects>
-          <object caption='feature_cells_schema.csv' id='feature_cells_SCHEMA01'>
-            <properties context=''>
-              <relation connection='textscan.cells_schema' name='feature_cells_schema.csv' table='[feature_cells_schema#csv]' type='table' />
             </properties>
           </object>
         </objects>
@@ -212,26 +123,24 @@
         </objects>
       </object-graph>
     </datasource>
-    <datasource caption='Ratio features (bedrooms_ratio histogram)' inline='true' name='federated.ratio01' version='18.1'>
+    <datasource caption='MedHouseVal histogram (binned)' inline='true' name='federated.hist01' version='18.1'>
       <connection class='federated'>
         <named-connections>
-          <named-connection caption='housing_ratio_features' name='textscan.ratio01'>
-            <connection class='textscan' directory='/Users/walton/Git/tableau-dashboard' filename='housing_ratio_features.csv' password='' server='' />
+          <named-connection caption='medhouseval_histogram' name='textscan.hist01'>
+            <connection class='textscan' directory='/Users/walton/Git/tableau-dashboard' filename='medhouseval_histogram.csv' password='' server='' />
           </named-connection>
         </named-connections>
-        <relation connection='textscan.ratio01' name='housing_ratio_features.csv' table='[housing_ratio_features#csv]' type='table'>
+        <relation connection='textscan.hist01' name='medhouseval_histogram.csv' table='[medhouseval_histogram#csv]' type='table'>
           <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
-            <column datatype='string' name='Feature' ordinal='0' />
-            <column datatype='integer' name='bin_index' ordinal='1' />
-            <column datatype='real' name='value_bin_mid' ordinal='2' />
-            <column datatype='integer' name='count' ordinal='3' />
+            <column datatype='integer' name='bin_index' ordinal='0' />
+            <column datatype='real' name='value_bin_mid' ordinal='1' />
+            <column datatype='integer' name='count' ordinal='2' />
           </columns>
         </relation>
       </connection>
       <aliases enabled='yes' />
-      <column datatype='string' name='[Feature]' role='dimension' type='nominal' />
       <column caption='Bin index' datatype='integer' name='[bin_index]' role='dimension' type='ordinal' />
-      <column caption='Value bin midpoint' datatype='real' default-format='#,##0.000' name='[value_bin_mid]' role='measure' type='quantitative' />
+      <column caption='Value bin midpoint' datatype='real' default-format='#,##0.00' name='[value_bin_mid]' role='measure' type='quantitative' />
       <column datatype='integer' name='[count]' role='measure' type='quantitative' />
       <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
       <semantic-values>
@@ -239,40 +148,44 @@
       </semantic-values>
       <object-graph>
         <objects>
-          <object caption='housing_ratio_features.csv' id='housing_ratio_RATIO01'>
+          <object caption='medhouseval_histogram.csv' id='medhouseval_HIST01'>
             <properties context=''>
-              <relation connection='textscan.ratio01' name='housing_ratio_features.csv' table='[housing_ratio_features#csv]' type='table' />
+              <relation connection='textscan.hist01' name='medhouseval_histogram.csv' table='[medhouseval_histogram#csv]' type='table' />
             </properties>
           </object>
         </objects>
       </object-graph>
     </datasource>
-    <datasource caption='Ratio scatter (bedrooms_ratio vs MedHouseVal)' inline='true' name='federated.scat01' version='18.1'>
+    <datasource caption='Housing geographic (heatmap)' inline='true' name='federated.geo01' version='18.1'>
       <connection class='federated'>
         <named-connections>
-          <named-connection caption='housing_ratio_scatter' name='textscan.scat01'>
-            <connection class='textscan' directory='/Users/walton/Git/tableau-dashboard' filename='housing_ratio_scatter.csv' password='' server='' />
+          <named-connection caption='housing_geo_map' name='textscan.geo01'>
+            <connection class='textscan' directory='/Users/walton/Git/tableau-dashboard' filename='housing_geo_map.csv' password='' server='' />
           </named-connection>
         </named-connections>
-        <relation connection='textscan.scat01' name='housing_ratio_scatter.csv' table='[housing_ratio_scatter#csv]' type='table'>
+        <relation connection='textscan.geo01' name='housing_geo_map.csv' table='[housing_geo_map#csv]' type='table'>
           <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
-            <column datatype='real' name='bedrooms_ratio' ordinal='0' />
-            <column datatype='real' name='MedHouseVal' ordinal='1' />
+            <column datatype='real' name='Latitude' ordinal='0' />
+            <column datatype='real' name='Longitude' ordinal='1' />
+            <column datatype='real' name='MedHouseVal' ordinal='2' />
+            <column datatype='real' name='MedHouseVal_pct' ordinal='3' />
           </columns>
         </relation>
       </connection>
       <aliases enabled='yes' />
-      <column caption='Bedrooms ratio' datatype='real' default-format='#,##0.000' name='[bedrooms_ratio]' role='measure' type='quantitative' />
-      <column caption='Med House Val' datatype='real' default-format='#,##0.00' name='[MedHouseVal]' role='measure' type='quantitative' />
+      <column caption='Latitude' datatype='real' default-format='#0.00' name='[Latitude]' role='measure' type='quantitative' />
+      <column caption='Longitude' datatype='real' default-format='#0.00' name='[Longitude]' role='measure' type='quantitative' />
+      <column caption='MedHouseVal' datatype='real' default-format='#,##0.00' name='[MedHouseVal]' role='measure' type='quantitative' />
+      <column datatype='real' default-format='#0.0%' name='[MedHouseVal_pct]' role='measure' type='quantitative' />
       <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
       </semantic-values>
       <object-graph>
         <objects>
-          <object caption='housing_ratio_scatter.csv' id='housing_ratio_scat_SCAT01'>
+          <object caption='housing_geo_map.csv' id='housing_geo_GEO01'>
             <properties context=''>
-              <relation connection='textscan.scat01' name='housing_ratio_scatter.csv' table='[housing_ratio_scatter#csv]' type='table' />
+              <relation connection='textscan.geo01' name='housing_geo_map.csv' table='[housing_geo_map#csv]' type='table' />
             </properties>
           </object>
         </objects>
@@ -319,47 +232,6 @@
       </table>
       <simple-id uuid='{C0000001-0000-0000-0000-000000000001}' />
     </worksheet>
-    <worksheet name='Schema (info)'>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='Feature schema (info)' name='federated.cells_schema' />
-          </datasources>
-          <datasource-dependencies datasource='federated.cells_schema'>
-            <column datatype='string' name='[Feature]' role='dimension' type='nominal' />
-            <column caption='Stat rank' datatype='integer' name='[stat_rank]' role='dimension' type='ordinal' />
-            <column datatype='string' name='[stat]' role='dimension' type='nominal' />
-            <column datatype='string' name='[cell]' role='dimension' type='nominal' />
-            <column-instance column='[Feature]' derivation='None' name='[none:Feature:nk]' pivot='key' type='nominal' />
-            <column-instance column='[stat_rank]' derivation='None' name='[none:stat_rank:ok]' pivot='key' type='ordinal' />
-            <column-instance column='[stat]' derivation='None' name='[none:stat:nk]' pivot='key' type='nominal' />
-            <column-instance column='[cell]' derivation='Attribute' name='[attr:cell:nk]' pivot='key' type='nominal' />
-          </datasource-dependencies>
-          <aggregation value='true' />
-        </view>
-        <style />
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Text' />
-            <encodings>
-              <text column='[federated.cells_schema].[attr:cell:nk]' />
-            </encodings>
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-labels-show' value='true' />
-                <format attr='mark-labels-cull' value='true' />
-              </style-rule>
-            </style>
-          </pane>
-        </panes>
-        <rows>[federated.cells_schema].[none:Feature:nk]</rows>
-        <cols>([federated.cells_schema].[none:stat_rank:ok] / [federated.cells_schema].[none:stat:nk])</cols>
-      </table>
-      <simple-id uuid='{C0000002-0000-0000-0000-000000000002}' />
-    </worksheet>
     <worksheet name='Describe table'>
       <table>
         <view>
@@ -401,57 +273,16 @@
       </table>
       <simple-id uuid='{C0000003-0000-0000-0000-000000000003}' />
     </worksheet>
-    <worksheet name='Histograms with skew flags'>
+    <worksheet name='MedHouseVal histogram'>
       <table>
         <view>
           <datasources>
-            <datasource caption='Feature histogram bins (ML)' name='federated.ml02_hist' />
+            <datasource caption='MedHouseVal histogram (binned)' name='federated.hist01' />
           </datasources>
-          <datasource-dependencies datasource='federated.ml02_hist'>
-            <column caption='Feature name' datatype='string' name='[Feature]' role='dimension' type='nominal' />
+          <datasource-dependencies datasource='federated.hist01'>
             <column caption='Bin index' datatype='integer' name='[bin_index]' role='dimension' type='ordinal' />
-            <column datatype='integer' name='[BIN_COUNT]' role='measure' type='quantitative' />
-            <column caption='pandas dtype' datatype='string' name='[pandas_dtype]' role='dimension' type='nominal' />
-            <column datatype='string' name='[skew_label]' role='dimension' type='nominal' />
-            <column-instance column='[Feature]' derivation='None' name='[none:Feature:nk]' pivot='key' type='nominal' />
-            <column-instance column='[bin_index]' derivation='None' name='[none:bin_index:ok]' pivot='key' type='ordinal' />
-            <column-instance column='[BIN_COUNT]' derivation='Sum' name='[sum:BIN_COUNT:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[skew_label]' derivation='None' name='[none:skew_label:nk]' pivot='key' type='nominal' />
-            <column-instance column='[pandas_dtype]' derivation='None' name='[none:pandas_dtype:nk]' pivot='key' type='nominal' />
-          </datasource-dependencies>
-          <aggregation value='true' />
-        </view>
-        <style />
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Square' />
-            <encodings>
-              <color column='[federated.ml02_hist].[sum:BIN_COUNT:qk]' />
-              <tooltip column='[federated.ml02_hist].[none:pandas_dtype:nk]' />
-              <tooltip column='[federated.ml02_hist].[none:skew_label:nk]' />
-            </encodings>
-          </pane>
-        </panes>
-        <rows>([federated.ml02_hist].[none:Feature:nk] / [federated.ml02_hist].[none:skew_label:nk])</rows>
-        <cols>[federated.ml02_hist].[none:bin_index:ok]</cols>
-      </table>
-      <simple-id uuid='{C0000004-0000-0000-0000-000000000004}' />
-    </worksheet>
-    <worksheet name='Ratio features'>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='Ratio features (bedrooms_ratio histogram)' name='federated.ratio01' />
-          </datasources>
-          <datasource-dependencies datasource='federated.ratio01'>
-            <column datatype='string' name='[Feature]' role='dimension' type='nominal' />
-            <column caption='Bin index' datatype='integer' name='[bin_index]' role='dimension' type='ordinal' />
-            <column caption='Value bin midpoint' datatype='real' default-format='#,##0.000' name='[value_bin_mid]' role='measure' type='quantitative' />
+            <column caption='Value bin midpoint' datatype='real' default-format='#,##0.00' name='[value_bin_mid]' role='measure' type='quantitative' />
             <column datatype='integer' name='[count]' role='measure' type='quantitative' />
-            <column-instance column='[Feature]' derivation='None' name='[none:Feature:nk]' pivot='key' type='nominal' />
             <column-instance column='[bin_index]' derivation='None' name='[none:bin_index:ok]' pivot='key' type='ordinal' />
             <column-instance column='[value_bin_mid]' derivation='Avg' name='[avg:value_bin_mid:qk]' pivot='key' type='quantitative' />
             <column-instance column='[count]' derivation='Sum' name='[sum:count:qk]' pivot='key' type='quantitative' />
@@ -466,24 +297,27 @@
             </view>
             <mark class='Bar' />
             <encodings>
-              <tooltip column='[federated.ratio01].[avg:value_bin_mid:qk]' />
+              <tooltip column='[federated.hist01].[avg:value_bin_mid:qk]' />
+              <tooltip column='[federated.hist01].[sum:count:qk]' />
             </encodings>
           </pane>
         </panes>
-        <rows>[federated.ratio01].[sum:count:qk]</rows>
-        <cols>([federated.ratio01].[none:Feature:nk] / [federated.ratio01].[none:bin_index:ok])</cols>
+        <rows>[federated.hist01].[sum:count:qk]</rows>
+        <cols>[federated.hist01].[none:bin_index:ok]</cols>
       </table>
-      <simple-id uuid='{C0000006-0000-0000-0000-000000000006}' />
+      <simple-id uuid='{C0000008-0000-0000-0000-000000000008}' />
     </worksheet>
-    <worksheet name='Ratio scatter'>
+    <worksheet name='Med house value heat map'>
       <table>
         <view>
           <datasources>
-            <datasource caption='Ratio scatter (bedrooms_ratio vs MedHouseVal)' name='federated.scat01' />
+            <datasource caption='Housing geographic (heatmap)' name='federated.geo01' />
           </datasources>
-          <datasource-dependencies datasource='federated.scat01'>
-            <column caption='Bedrooms ratio' datatype='real' default-format='#,##0.000' name='[bedrooms_ratio]' role='measure' type='quantitative' />
-            <column caption='Med House Val' datatype='real' default-format='#,##0.00' name='[MedHouseVal]' role='measure' type='quantitative' />
+          <datasource-dependencies datasource='federated.geo01'>
+            <column caption='Latitude' datatype='real' default-format='#0.00' name='[Latitude]' role='measure' type='quantitative' />
+            <column caption='Longitude' datatype='real' default-format='#0.00' name='[Longitude]' role='measure' type='quantitative' />
+            <column caption='MedHouseVal' datatype='real' default-format='#,##0.00' name='[MedHouseVal]' role='measure' type='quantitative' />
+            <column datatype='real' default-format='#0.0%' name='[MedHouseVal_pct]' role='measure' type='quantitative' />
           </datasource-dependencies>
           <aggregation value='false' />
         </view>
@@ -494,12 +328,16 @@
               <breakdown value='auto' />
             </view>
             <mark class='Circle' />
+            <encodings>
+              <color column='[federated.geo01].[MedHouseVal_pct]' />
+              <tooltip column='[federated.geo01].[MedHouseVal]' />
+            </encodings>
           </pane>
         </panes>
-        <rows>[federated.scat01].[MedHouseVal]</rows>
-        <cols>[federated.scat01].[bedrooms_ratio]</cols>
+        <rows>[federated.geo01].[Latitude]</rows>
+        <cols>[federated.geo01].[Longitude]</cols>
       </table>
-      <simple-id uuid='{C0000007-0000-0000-0000-000000000007}' />
+      <simple-id uuid='{C0000005-0000-0000-0000-000000000005}' />
     </worksheet>
     <worksheet name='ML - Correlation matrix'>
       <table>
@@ -550,7 +388,7 @@
         <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
           <zone h='5000' id='5' type='text' w='98400' x='800' y='800'>
             <formatted-text>
-              <run fontname='Segoe UI' fontsize='12' bold='true'>California Housing - EDA workflow (Geron Ch.2): head / info / describe / hist / ratios / correlate</run>
+              <run fontname='Segoe UI' fontsize='12' bold='true'>California Housing - EDA workflow (Geron Ch.2): head / describe / hist / map / correlate</run>
             </formatted-text>
             <zone-style>
               <format attr='border-color' value='#000000' />
@@ -567,59 +405,37 @@
               <format attr='margin' value='4' />
             </zone-style>
           </zone>
-          <zone h='14000' id='20' param='horz' type-v2='layout-flow' w='98400' x='800' y='16400'>
-            <zone h='14000' id='21' name='Schema (info)' w='32800' x='800' y='16400'>
-              <zone-style>
-                <format attr='border-color' value='#000000' />
-                <format attr='border-style' value='none' />
-                <format attr='border-width' value='0' />
-                <format attr='margin' value='4' />
-              </zone-style>
-            </zone>
-            <zone h='14000' id='22' name='Describe table' w='65600' x='33800' y='16400'>
-              <zone-style>
-                <format attr='border-color' value='#000000' />
-                <format attr='border-style' value='none' />
-                <format attr='border-width' value='0' />
-                <format attr='margin' value='4' />
-              </zone-style>
-            </zone>
+          <zone h='14000' id='22' name='Describe table' w='98400' x='800' y='16400'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
           </zone>
-          <zone h='25000' id='30' param='horz' type-v2='layout-flow' w='98400' x='800' y='30800'>
-            <zone h='25000' id='31' name='Histograms with skew flags' w='98400' x='800' y='30800'>
-              <zone-style>
-                <format attr='border-color' value='#000000' />
-                <format attr='border-style' value='none' />
-                <format attr='border-width' value='0' />
-                <format attr='margin' value='4' />
-              </zone-style>
-            </zone>
+          <zone h='21800' id='33' name='MedHouseVal histogram' w='98400' x='800' y='31400'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
           </zone>
-          <zone h='20000' id='40' param='horz' type-v2='layout-flow' w='98400' x='800' y='56200'>
-            <zone h='20000' id='41' name='Ratio features' w='32800' x='800' y='56200'>
-              <zone-style>
-                <format attr='border-color' value='#000000' />
-                <format attr='border-style' value='none' />
-                <format attr='border-width' value='0' />
-                <format attr='margin' value='4' />
-              </zone-style>
-            </zone>
-            <zone h='20000' id='42' name='Ratio scatter' w='32800' x='33800' y='56200'>
-              <zone-style>
-                <format attr='border-color' value='#000000' />
-                <format attr='border-style' value='none' />
-                <format attr='border-width' value='0' />
-                <format attr='margin' value='4' />
-              </zone-style>
-            </zone>
-            <zone h='20000' id='43' name='ML - Correlation matrix' w='32800' x='66800' y='56200'>
-              <zone-style>
-                <format attr='border-color' value='#000000' />
-                <format attr='border-style' value='none' />
-                <format attr='border-width' value='0' />
-                <format attr='margin' value='4' />
-              </zone-style>
-            </zone>
+          <zone h='24400' id='35' name='Med house value heat map' w='98400' x='800' y='53800'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='20800' id='43' name='ML - Correlation matrix' w='98400' x='800' y='79200'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
           </zone>
           <zone-style>
             <format attr='border-color' value='#000000' />
@@ -637,7 +453,7 @@
               <zone h='98000' id='702' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
                 <zone fixed-size='80' h='4000' id='710' is-fixed='true' type='text' w='98400' x='800' y='1000'>
                   <formatted-text>
-                    <run fontname='Segoe UI' fontsize='11' bold='true'>EDA workflow: head / info / describe / hist / ratios / correlate</run>
+                    <run fontname='Segoe UI' fontsize='11' bold='true'>EDA workflow: head / describe / hist / map / correlate</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -656,7 +472,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='200' h='9000' id='712' name='Schema (info)' is-fixed='true' w='98400' x='800' y='15000'>
+                <zone fixed-size='240' h='11000' id='713' name='Describe table' is-fixed='true' w='98400' x='800' y='15400'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -665,7 +481,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='240' h='11000' id='713' name='Describe table' is-fixed='true' w='98400' x='800' y='24500'>
+                <zone fixed-size='260' h='14000' id='714' name='MedHouseVal histogram' is-fixed='true' w='98400' x='800' y='27400'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -674,7 +490,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='13000' id='714' name='Histograms with skew flags' is-fixed='true' w='98400' x='800' y='36000'>
+                <zone fixed-size='300' h='14000' id='715' name='Med house value heat map' is-fixed='true' w='98400' x='800' y='41800'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -683,25 +499,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='220' h='10000' id='716' name='Ratio features' is-fixed='true' w='98400' x='800' y='49500'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='240' h='11000' id='717' name='Ratio scatter' is-fixed='true' w='98400' x='800' y='60500'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='280' h='13000' id='718' name='ML - Correlation matrix' is-fixed='true' w='98400' x='800' y='72500'>
+                <zone fixed-size='280' h='13000' id='718' name='ML - Correlation matrix' is-fixed='true' w='98400' x='800' y='56600'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -748,6 +546,29 @@
       </cards>
       <simple-id uuid='{E0000001-0000-0000-0000-000000000001}' />
     </window>
+    <window class='worksheet' name='Describe table'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{E0000005-0000-0000-0000-000000000005}' />
+    </window>
     <window class='worksheet' name='ML - Correlation matrix'>
       <cards>
         <edge name='left'>
@@ -776,7 +597,7 @@
       </cards>
       <simple-id uuid='{E0000002-0000-0000-0000-000000000002}' />
     </window>
-    <window class='worksheet' name='Histograms with skew flags'>
+    <window class='worksheet' name='Med house value heat map'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -798,11 +619,34 @@
         </edge>
         <edge name='right'>
           <strip size='220'>
-            <card pane-specification-id='0' param='[federated.ml02_hist].[sum:BIN_COUNT:qk]' type='color' />
+            <card pane-specification-id='0' param='[federated.geo01].[MedHouseVal_pct]' type='color' />
           </strip>
         </edge>
       </cards>
       <simple-id uuid='{E0000003-0000-0000-0000-000000000003}' />
+    </window>
+    <window class='worksheet' name='MedHouseVal histogram'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{E0000004-0000-0000-0000-000000000004}' />
     </window>
   </windows>
 </workbook>
