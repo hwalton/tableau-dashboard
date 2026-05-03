@@ -119,6 +119,27 @@ def build_ml_assets(df: pd.DataFrame, root: Path) -> None:
     hist_counts.to_csv(root / "feature_histogram_bins.csv", index=False)
 
 
+def write_kpi_summary(df: pd.DataFrame, root: Path) -> None:
+    """One table for Tableau: row per headline KPI (replaces four separate BAN sheets)."""
+    price_to_income = df["MedHouseVal"].astype(float) / df["MedInc"].astype(float)
+    rows = [
+        {"metric": "Block groups (rows)", "value": float(len(df))},
+        {
+            "metric": "Avg median house value ($100k units)",
+            "value": round(float(df["MedHouseVal"].mean()), 6),
+        },
+        {
+            "metric": "Avg median income ($10k units)",
+            "value": round(float(df["MedInc"].mean()), 6),
+        },
+        {
+            "metric": "Avg price-to-income ratio",
+            "value": round(float(price_to_income.mean()), 6),
+        },
+    ]
+    pd.DataFrame(rows).to_csv(root / "kpi_summary.csv", index=False)
+
+
 def main() -> None:
     root = Path(__file__).resolve().parent
     out_path = root / "california_housing.csv"
@@ -127,6 +148,9 @@ def main() -> None:
     df = bunch.frame
     df.to_csv(out_path, index=False)
     print(f"Wrote {out_path.name}")
+
+    write_kpi_summary(df, root)
+    print("Wrote kpi_summary.csv")
 
     build_ml_assets(df, root)
     print(

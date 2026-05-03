@@ -189,7 +189,7 @@
       <column caption='Region Avg Value' datatype='real' default-format='#,##0.00' name='[Calculation_1005]' role='measure' type='quantitative'>
         <calculation class='tableau' formula='{ FIXED [Calculation_1001] : AVG([MedHouseVal]) }' />
       </column>
-      <column caption='Value Residual' datatype='real' default-format='#,##0.00' name='[Calculation_1006]' role='measure' type='quantitative'>
+      <column caption='Value residual (red = pricier vs coastal / inland avg)' datatype='real' default-format='#,##0.00' name='[Calculation_1006]' role='measure' type='quantitative'>
         <calculation class='tableau' formula='[MedHouseVal] - [Calculation_1005]' />
       </column>
       <column caption='Income Tier' datatype='string' name='[Calculation_1007]' role='dimension' type='nominal'>
@@ -441,7 +441,7 @@
       </connection>
       <aliases enabled='yes' />
       <column caption='Feature name' datatype='string' name='[Feature]' role='dimension' type='nominal' />
-      <column caption='Value bin midpoint' datatype='real' name='[Value_bin_mid]' role='dimension' type='ordinal' />
+      <column caption='Value bin midpoint' datatype='real' name='[Value_bin_mid]' role='dimension' type='quantitative' />
       <column datatype='integer' name='[BIN_COUNT]' role='measure' type='quantitative' />
       <column caption='pandas dtype' datatype='string' name='[pandas_dtype]' role='dimension' type='nominal' />
       <column caption='inferred type (pandas)' datatype='string' name='[inferred_type]' role='dimension' type='nominal' />
@@ -465,6 +465,82 @@
                   <column datatype='string' name='inferred_type' ordinal='4' />
                   <column datatype='string' name='skew_label' ordinal='5' />
                   <column datatype='real' name='skewness' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='KPI summary' inline='true' name='federated.kpi_summ01' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='kpi_summary' name='textscan.ml03_kpi'>
+            <connection class='textscan' directory='/Users/walton/Git/tableau-dashboard' filename='kpi_summary.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.ml03_kpi' name='kpi_summary.csv' table='[kpi_summary#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+            <column datatype='string' name='metric' ordinal='0' />
+            <column datatype='real' name='value' ordinal='1' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[kpi_summary.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_GB&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>metric</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[metric]</local-name>
+            <parent-name>[kpi_summary.csv]</parent-name>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kpi_summary_MLKPI01]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>value</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[value]</local-name>
+            <parent-name>[kpi_summary.csv]</parent-name>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kpi_summary_MLKPI01]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal' />
+      <column datatype='real' default-format='#,##0.######' name='[value]' role='measure' type='quantitative' />
+      <column datatype='table' name='[__tableau_internal_object_id__].[kpi_summary_MLKPI01]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='kpi_summary.csv' id='kpi_summary_MLKPI01'>
+            <properties context=''>
+              <relation connection='textscan.ml03_kpi' name='kpi_summary.csv' table='[kpi_summary#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+                  <column datatype='string' name='metric' ordinal='0' />
+                  <column datatype='real' name='value' ordinal='1' />
                 </columns>
               </relation>
             </properties>
@@ -564,14 +640,18 @@
             <column caption='Med House Val' datatype='real' name='[MedHouseVal]' role='measure' type='quantitative' />
             <column caption='Lat Bin' datatype='real' name='[Calculation_1003]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
             <column caption='Lon Bin' datatype='real' name='[Calculation_1004]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
-            <column caption='Value Residual' datatype='real' name='[Calculation_1006]' role='measure' type='quantitative' />
+            <column caption='Value residual (red = pricier vs coastal / inland avg)' datatype='real' name='[Calculation_1006]' role='measure' type='quantitative' />
             <column-instance column='[Calculation_1003]' derivation='None' name='[none:Calculation_1003:nk]' pivot='key' type='quantitative' />
             <column-instance column='[Calculation_1004]' derivation='None' name='[none:Calculation_1004:nk]' pivot='key' type='quantitative' />
             <column-instance column='[Calculation_1006]' derivation='Avg' name='[avg:Calculation_1006:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
           <aggregation value='true' />
         </view>
-        <style />
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[avg:Calculation_1006:qk]' palette='tableau-red-blue' reverse='true' type='interpolated' />
+          </style-rule>
+        </style>
         <panes>
           <pane selection-relaxation-option='selection-relaxation-allow'>
             <view>
@@ -650,15 +730,17 @@
       </table>
       <simple-id uuid='{A1000004-0000-0000-0000-000000000004}' />
     </worksheet>
-    <worksheet name='KPI - Block Groups'>
+    <worksheet name='KPI summary'>
       <table>
         <view>
           <datasources>
-            <datasource caption='california_housing' name='federated.1r8oud61hccbs71bjx3vr1oj0svb' />
+            <datasource caption='KPI summary' name='federated.kpi_summ01' />
           </datasources>
-          <datasource-dependencies datasource='federated.1r8oud61hccbs71bjx3vr1oj0svb'>
-            <column caption='california_housing.csv' datatype='table' name='[__tableau_internal_object_id__].[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]' role='measure' type='quantitative' />
-            <column-instance column='[__tableau_internal_object_id__].[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:california_housing.csv_4E4DA77C99974D3EA7123D8961467D08:qk]' pivot='key' type='quantitative' />
+          <datasource-dependencies datasource='federated.kpi_summ01'>
+            <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal' />
+            <column datatype='real' default-format='#,##0.######' name='[value]' role='measure' type='quantitative' />
+            <column-instance column='[metric]' derivation='None' name='[none:metric:nk]' pivot='key' type='nominal' />
+            <column-instance column='[value]' derivation='Avg' name='[avg:value:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
           <aggregation value='true' />
         </view>
@@ -670,7 +752,7 @@
             </view>
             <mark class='Text' />
             <encodings>
-              <text column='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[__tableau_internal_object_id__].[cnt:california_housing.csv_4E4DA77C99974D3EA7123D8961467D08:qk]' />
+              <text column='[federated.kpi_summ01].[avg:value:qk]' />
             </encodings>
             <style>
               <style-rule element='mark'>
@@ -680,115 +762,10 @@
             </style>
           </pane>
         </panes>
-        <rows />
+        <rows>[federated.kpi_summ01].[none:metric:nk]</rows>
         <cols />
       </table>
-      <simple-id uuid='{A1000005-0000-0000-0000-000000000005}' />
-    </worksheet>
-    <worksheet name='KPI - Avg Med Value'>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='california_housing' name='federated.1r8oud61hccbs71bjx3vr1oj0svb' />
-          </datasources>
-          <datasource-dependencies datasource='federated.1r8oud61hccbs71bjx3vr1oj0svb'>
-            <column caption='Med House Val' datatype='real' name='[MedHouseVal]' role='measure' type='quantitative' />
-            <column-instance column='[MedHouseVal]' derivation='Avg' name='[avg:MedHouseVal:qk]' pivot='key' type='quantitative' />
-          </datasource-dependencies>
-          <aggregation value='true' />
-        </view>
-        <style />
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Text' />
-            <encodings>
-              <text column='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[avg:MedHouseVal:qk]' />
-            </encodings>
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-labels-show' value='true' />
-                <format attr='mark-labels-cull' value='true' />
-              </style-rule>
-            </style>
-          </pane>
-        </panes>
-        <rows />
-        <cols />
-      </table>
-      <simple-id uuid='{A1000006-0000-0000-0000-000000000006}' />
-    </worksheet>
-    <worksheet name='KPI - Avg Med Income'>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='california_housing' name='federated.1r8oud61hccbs71bjx3vr1oj0svb' />
-          </datasources>
-          <datasource-dependencies datasource='federated.1r8oud61hccbs71bjx3vr1oj0svb'>
-            <column caption='Med Inc' datatype='real' name='[MedInc]' role='measure' type='quantitative' />
-            <column-instance column='[MedInc]' derivation='Avg' name='[avg:MedInc:qk]' pivot='key' type='quantitative' />
-          </datasource-dependencies>
-          <aggregation value='true' />
-        </view>
-        <style />
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Text' />
-            <encodings>
-              <text column='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[avg:MedInc:qk]' />
-            </encodings>
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-labels-show' value='true' />
-                <format attr='mark-labels-cull' value='true' />
-              </style-rule>
-            </style>
-          </pane>
-        </panes>
-        <rows />
-        <cols />
-      </table>
-      <simple-id uuid='{A1000007-0000-0000-0000-000000000007}' />
-    </worksheet>
-    <worksheet name='KPI - Avg Price-to-Income'>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='california_housing' name='federated.1r8oud61hccbs71bjx3vr1oj0svb' />
-          </datasources>
-          <datasource-dependencies datasource='federated.1r8oud61hccbs71bjx3vr1oj0svb'>
-            <column caption='Price-to-Income Ratio' datatype='real' name='[Calculation_1002]' role='measure' type='quantitative' />
-            <column-instance column='[Calculation_1002]' derivation='Avg' name='[avg:Calculation_1002:qk]' pivot='key' type='quantitative' />
-          </datasource-dependencies>
-          <aggregation value='true' />
-        </view>
-        <style />
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Text' />
-            <encodings>
-              <text column='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[avg:Calculation_1002:qk]' />
-            </encodings>
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-labels-show' value='true' />
-                <format attr='mark-labels-cull' value='true' />
-              </style-rule>
-            </style>
-          </pane>
-        </panes>
-        <rows />
-        <cols />
-      </table>
-      <simple-id uuid='{A1000008-0000-0000-0000-000000000008}' />
+      <simple-id uuid='{A1000009-0000-0000-0000-000000000009}' />
     </worksheet>
     <worksheet name='ML - Correlation matrix'>
       <table>
@@ -815,7 +792,14 @@
             <mark class='Square' />
             <encodings>
               <color column='[federated.ml01_corr].[avg:Pearson_r:qk]' />
+              <text column='[federated.ml01_corr].[avg:Pearson_r:qk]' />
             </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='false' />
+              </style-rule>
+            </style>
           </pane>
         </panes>
         <rows>[federated.ml01_corr].[none:Variable_Y:nk]</rows>
@@ -831,18 +815,17 @@
           </datasources>
           <datasource-dependencies datasource='federated.ml02_hist'>
             <column caption='Feature name' datatype='string' name='[Feature]' role='dimension' type='nominal' />
-            <column caption='Value bin midpoint' datatype='real' name='[Value_bin_mid]' role='dimension' type='ordinal' />
+            <column caption='Value bin midpoint' datatype='real' name='[Value_bin_mid]' role='dimension' type='quantitative' />
             <column datatype='integer' name='[BIN_COUNT]' role='measure' type='quantitative' />
             <column caption='pandas dtype' datatype='string' name='[pandas_dtype]' role='dimension' type='nominal' />
             <column caption='inferred type (pandas)' datatype='string' name='[inferred_type]' role='dimension' type='nominal' />
             <column datatype='string' name='[skew_label]' role='dimension' type='nominal' />
             <column datatype='real' name='[skewness]' role='measure' type='quantitative' />
             <column-instance column='[Feature]' derivation='None' name='[none:Feature:nk]' pivot='key' type='nominal' />
-            <column-instance column='[Value_bin_mid]' derivation='None' name='[none:Value_bin_mid:nk]' pivot='key' type='ordinal' />
+            <column-instance column='[Value_bin_mid]' derivation='None' name='[none:Value_bin_mid:nk]' pivot='key' type='quantitative' />
             <column-instance column='[BIN_COUNT]' derivation='Sum' name='[sum:BIN_COUNT:qk]' pivot='key' type='quantitative' />
             <column-instance column='[skew_label]' derivation='None' name='[none:skew_label:nk]' pivot='key' type='nominal' />
             <column-instance column='[pandas_dtype]' derivation='None' name='[none:pandas_dtype:nk]' pivot='key' type='nominal' />
-            <column-instance column='[skewness]' derivation='Avg' name='[avg:skewness:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
           <aggregation value='true' />
         </view>
@@ -852,16 +835,15 @@
             <view>
               <breakdown value='auto' />
             </view>
-            <mark class='Bar' />
+            <mark class='Square' />
             <encodings>
-              <color column='[federated.ml02_hist].[none:Feature:nk]' />
+              <color column='[federated.ml02_hist].[sum:BIN_COUNT:qk]' />
               <tooltip column='[federated.ml02_hist].[none:pandas_dtype:nk]' />
               <tooltip column='[federated.ml02_hist].[none:skew_label:nk]' />
-              <tooltip column='[federated.ml02_hist].[avg:skewness:qk]' />
             </encodings>
           </pane>
         </panes>
-        <rows>[federated.ml02_hist].[sum:BIN_COUNT:qk]</rows>
+        <rows>[federated.ml02_hist].[none:Feature:nk]</rows>
         <cols>[federated.ml02_hist].[none:Value_bin_mid:nk]</cols>
       </table>
       <simple-id uuid='{B2000002-0000-0000-0000-000000000002}' />
@@ -877,31 +859,7 @@
       <zones>
         <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
           <zone h='15000' id='10' param='horz' type-v2='layout-flow' w='98400' x='800' y='800'>
-            <zone h='13000' id='101' name='KPI - Block Groups' w='24600' x='800' y='800'>
-              <zone-style>
-                <format attr='border-color' value='#000000' />
-                <format attr='border-style' value='none' />
-                <format attr='border-width' value='0' />
-                <format attr='margin' value='4' />
-              </zone-style>
-            </zone>
-            <zone h='13000' id='102' name='KPI - Avg Med Value' w='24600' x='25400' y='800'>
-              <zone-style>
-                <format attr='border-color' value='#000000' />
-                <format attr='border-style' value='none' />
-                <format attr='border-width' value='0' />
-                <format attr='margin' value='4' />
-              </zone-style>
-            </zone>
-            <zone h='13000' id='103' name='KPI - Avg Med Income' w='24600' x='50000' y='800'>
-              <zone-style>
-                <format attr='border-color' value='#000000' />
-                <format attr='border-style' value='none' />
-                <format attr='border-width' value='0' />
-                <format attr='margin' value='4' />
-              </zone-style>
-            </zone>
-            <zone h='13000' id='104' name='KPI - Avg Price-to-Income' w='24600' x='74600' y='800'>
+            <zone h='13000' id='101' name='KPI summary' w='98400' x='800' y='800'>
               <zone-style>
                 <format attr='border-color' value='#000000' />
                 <format attr='border-style' value='none' />
@@ -912,7 +870,7 @@
           </zone>
           <zone h='83000' id='15' param='vert' type-v2='layout-flow' w='98400' x='800' y='16800'>
             <zone h='41000' id='21' param='horz' type-v2='layout-flow' w='98400' x='800' y='16800'>
-              <zone h='39400' id='222' name='Drivers - Income vs Value' w='49200' x='800' y='17400'>
+              <zone h='39400' id='222' name='Drivers - Income vs Value' w='34400' x='800' y='17400'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -920,13 +878,34 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='39400' id='223' name='Residuals Map' w='49200' x='50800' y='17400'>
+              <zone h='39400' id='223' name='Residuals Map' w='34400' x='36000' y='17400'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
                   <format attr='border-width' value='0' />
                   <format attr='margin' value='4' />
                 </zone-style>
+              </zone>
+              <zone h='39400' id='224' param='vert' type-v2='layout-flow' w='27200' x='71200' y='17400'>
+                <zone h='30000' id='224c' name='Residuals Map' param='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[avg:Calculation_1006:qk]' type='color' w='27200' x='800' y='800'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='9400' id='225t' type='text' w='27200' x='800' y='31600'>
+                  <formatted-text>
+                    <run fontsize='10'>Residual = median home value minus the average MedHouseVal for coastal vs inland (longitude split at −121°). Cells show AVG(residual) in ~0.2° bins. Warm colors = pricier than belt average; cool = cheaper. MedHouseVal is in hundreds of thousands of dollars ($100k).</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
               </zone>
             </zone>
             <zone h='41000' id='31' param='horz' type-v2='layout-flow' w='98400' x='800' y='59400'>
@@ -962,7 +941,7 @@
           <zones>
             <zone h='100000' id='701' type-v2='layout-basic' w='100000' x='0' y='0'>
               <zone h='98000' id='702' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
-                <zone fixed-size='120' h='8000' id='711' name='KPI - Block Groups' is-fixed='true' w='98400' x='800' y='1000'>
+                <zone fixed-size='160' h='9000' id='711' name='KPI summary' is-fixed='true' w='98400' x='800' y='1000'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -971,7 +950,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='120' h='8000' id='712' name='KPI - Avg Med Value' is-fixed='true' w='98400' x='800' y='9000'>
+                <zone fixed-size='280' h='18000' id='715' name='Drivers - Income vs Value' is-fixed='true' w='98400' x='800' y='11600'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -980,7 +959,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='120' h='8000' id='713' name='KPI - Avg Med Income' is-fixed='true' w='98400' x='800' y='17000'>
+                <zone fixed-size='280' h='18000' id='716' name='Residuals Map' is-fixed='true' w='98400' x='800' y='30200'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -989,7 +968,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='120' h='8000' id='714' name='KPI - Avg Price-to-Income' is-fixed='true' w='98400' x='800' y='25000'>
+                <zone fixed-size='160' h='9800' id='716legend' name='Residuals Map' is-fixed='true' param='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[avg:Calculation_1006:qk]' type='color' w='98400' x='800' y='49100'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -998,7 +977,10 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='18000' id='715' name='Drivers - Income vs Value' is-fixed='true' w='98400' x='800' y='33000'>
+                <zone fixed-size='200' h='7400' id='716explain' type='text' w='98400' x='800' y='59600'>
+                  <formatted-text>
+                    <run fontsize='9'>Residual legend: warm = pricier vs coastal/inland belt avg; cool = cheaper. −121° split. Units: MedHouseVal in $100k.</run>
+                  </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1007,7 +989,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='18000' id='716' name='Residuals Map' is-fixed='true' w='98400' x='800' y='51000'>
+                <zone fixed-size='280' h='14000' id='717' name='Drivers - Age vs Value' is-fixed='true' w='98400' x='800' y='68200'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1016,16 +998,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='14000' id='717' name='Drivers - Age vs Value' is-fixed='true' w='98400' x='800' y='69000'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='280' h='14000' id='718' name='Affordability by Region' is-fixed='true' w='98400' x='800' y='83000'>
+                <zone fixed-size='280' h='14000' id='718' name='Affordability by Region' is-fixed='true' w='98400' x='800' y='83200'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1072,6 +1045,62 @@
         </edge>
       </cards>
       <simple-id uuid='{2644BAF2-0E2D-41ED-846E-2D895530DC53}' />
+    </window>
+    <window class='worksheet' name='ML - Correlation matrix'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='220'>
+            <card pane-specification-id='0' param='[federated.ml01_corr].[avg:Pearson_r:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{E91C4BB2-6013-41D2-9C7F-AABBCCDDEE01}' />
+    </window>
+    <window class='worksheet' name='Residuals Map'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='240'>
+            <card pane-specification-id='0' param='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[avg:Calculation_1006:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{A1000010-0000-0000-0000-000000000010}' />
     </window>
   </windows>
   <thumbnails>
