@@ -1,0 +1,893 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20261.26.0410.0924                               -->
+<workbook original-version='18.1' source-build='2026.1.1 (20261.26.0410.0924)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='california_housing' inline='true' name='federated.1r8oud61hccbs71bjx3vr1oj0svb' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='california_housing' name='textscan.1j42les0so36nf176s1mn05okh01'>
+            <connection class='textscan' directory='/Users/walton/Git/tableau-dashboard' filename='california_housing.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1j42les0so36nf176s1mn05okh01' name='california_housing.csv' table='[california_housing#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+            <column datatype='real' name='MedInc' ordinal='0' />
+            <column datatype='real' name='HouseAge' ordinal='1' />
+            <column datatype='real' name='AveRooms' ordinal='2' />
+            <column datatype='real' name='AveBedrms' ordinal='3' />
+            <column datatype='real' name='Population' ordinal='4' />
+            <column datatype='real' name='AveOccup' ordinal='5' />
+            <column datatype='real' name='Latitude' ordinal='6' />
+            <column datatype='real' name='Longitude' ordinal='7' />
+            <column datatype='real' name='MedHouseVal' ordinal='8' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[california_housing.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;£&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MedInc</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[MedInc]</local-name>
+            <parent-name>[california_housing.csv]</parent-name>
+            <remote-alias>MedInc</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HouseAge</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[HouseAge]</local-name>
+            <parent-name>[california_housing.csv]</parent-name>
+            <remote-alias>HouseAge</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AveRooms</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AveRooms]</local-name>
+            <parent-name>[california_housing.csv]</parent-name>
+            <remote-alias>AveRooms</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AveBedrms</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AveBedrms]</local-name>
+            <parent-name>[california_housing.csv]</parent-name>
+            <remote-alias>AveBedrms</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Population</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Population]</local-name>
+            <parent-name>[california_housing.csv]</parent-name>
+            <remote-alias>Population</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AveOccup</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AveOccup]</local-name>
+            <parent-name>[california_housing.csv]</parent-name>
+            <remote-alias>AveOccup</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Latitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Latitude]</local-name>
+            <parent-name>[california_housing.csv]</parent-name>
+            <remote-alias>Latitude</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Longitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Longitude]</local-name>
+            <parent-name>[california_housing.csv]</parent-name>
+            <remote-alias>Longitude</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MedHouseVal</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[MedHouseVal]</local-name>
+            <parent-name>[california_housing.csv]</parent-name>
+            <remote-alias>MedHouseVal</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Ave Bedrms' datatype='real' name='[AveBedrms]' role='measure' type='quantitative' />
+      <column caption='Ave Occup' datatype='real' name='[AveOccup]' role='measure' type='quantitative' />
+      <column caption='Ave Rooms' datatype='real' name='[AveRooms]' role='measure' type='quantitative' />
+      <column caption='House Age' datatype='real' name='[HouseAge]' role='measure' type='quantitative' />
+      <column aggregation='Avg' datatype='real' name='[Latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column aggregation='Avg' datatype='real' name='[Longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column caption='Med House Val' datatype='real' name='[MedHouseVal]' role='measure' type='quantitative' />
+      <column caption='Med Inc' datatype='real' name='[MedInc]' role='measure' type='quantitative' />
+      <column caption='california_housing.csv' datatype='table' name='[__tableau_internal_object_id__].[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]' role='measure' type='quantitative' />
+      <column caption='Coastal Flag' datatype='string' name='[Calculation_1001]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Longitude] &lt;= -121 THEN &quot;Coastal&quot; ELSE &quot;Inland&quot; END' />
+      </column>
+      <column caption='Price-to-Income Ratio' datatype='real' default-format='#,##0.00' name='[Calculation_1002]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[MedHouseVal] / [MedInc]' />
+      </column>
+      <column caption='Lat Bin' datatype='real' default-format='#,##0.0' name='[Calculation_1003]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative'>
+        <calculation class='tableau' formula='ROUND([Latitude]*5)/5' />
+      </column>
+      <column caption='Lon Bin' datatype='real' default-format='#,##0.0' name='[Calculation_1004]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative'>
+        <calculation class='tableau' formula='ROUND([Longitude]*5)/5' />
+      </column>
+      <column caption='Region Avg Value' datatype='real' default-format='#,##0.00' name='[Calculation_1005]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{ FIXED [Calculation_1001] : AVG([MedHouseVal]) }' />
+      </column>
+      <column caption='Value Residual' datatype='real' default-format='#,##0.00' name='[Calculation_1006]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[MedHouseVal] - [Calculation_1005]' />
+      </column>
+      <column caption='Income Tier' datatype='string' name='[Calculation_1007]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [MedInc] &gt;= 6 THEN &quot;High&quot; ELSEIF [MedInc] &gt;= 3 THEN &quot;Mid&quot; ELSE &quot;Low&quot; END' />
+      </column>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='california_housing.csv' id='california_housing.csv_4E4DA77C99974D3EA7123D8961467D08'>
+            <properties context=''>
+              <relation connection='textscan.1j42les0so36nf176s1mn05okh01' name='california_housing.csv' table='[california_housing#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+                  <column datatype='real' name='MedInc' ordinal='0' />
+                  <column datatype='real' name='HouseAge' ordinal='1' />
+                  <column datatype='real' name='AveRooms' ordinal='2' />
+                  <column datatype='real' name='AveBedrms' ordinal='3' />
+                  <column datatype='real' name='Population' ordinal='4' />
+                  <column datatype='real' name='AveOccup' ordinal='5' />
+                  <column datatype='real' name='Latitude' ordinal='6' />
+                  <column datatype='real' name='Longitude' ordinal='7' />
+                  <column datatype='real' name='MedHouseVal' ordinal='8' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Min Population' datatype='integer' default-format='#,##0' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='200'>
+        <calculation class='tableau' formula='200' />
+        <range granularity='1' max='5000' min='0' />
+      </column>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='california_housing' name='federated.1r8oud61hccbs71bjx3vr1oj0svb' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1r8oud61hccbs71bjx3vr1oj0svb'>
+            <column caption='Ave Bedrms' datatype='real' name='[AveBedrms]' role='measure' type='quantitative' />
+            <column caption='Ave Occup' datatype='real' name='[AveOccup]' role='measure' type='quantitative' />
+            <column caption='Ave Rooms' datatype='real' name='[AveRooms]' role='measure' type='quantitative' />
+            <column caption='House Age' datatype='real' name='[HouseAge]' role='measure' type='quantitative' />
+            <column aggregation='Avg' datatype='real' name='[Latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column aggregation='Avg' datatype='real' name='[Longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column caption='Med House Val' datatype='real' name='[MedHouseVal]' role='measure' type='quantitative' />
+            <column caption='Med Inc' datatype='real' name='[MedInc]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Population]' role='measure' type='quantitative' />
+            <column caption='california_housing.csv' datatype='table' name='[__tableau_internal_object_id__].[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:california_housing.csv_4E4DA77C99974D3EA7123D8961467D08:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Latitude]' derivation='Avg' name='[avg:Latitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Longitude]' derivation='Avg' name='[avg:Longitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[AveBedrms]' derivation='Sum' name='[sum:AveBedrms:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[AveOccup]' derivation='Sum' name='[sum:AveOccup:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[AveRooms]' derivation='Sum' name='[sum:AveRooms:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[HouseAge]' derivation='Sum' name='[sum:HouseAge:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[MedHouseVal]' derivation='Sum' name='[sum:MedHouseVal:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[MedInc]' derivation='Sum' name='[sum:MedInc:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Population]' derivation='Sum' name='[sum:Population:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[:Measure Names]'>
+            <groupfilter function='level-members' level='[:Measure Names]' />
+          </filter>
+          <slices>
+            <column>[federated.1r8oud61hccbs71bjx3vr1oj0svb].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.1r8oud61hccbs71bjx3vr1oj0svb].[Multiple Values]</rows>
+        <cols>[federated.1r8oud61hccbs71bjx3vr1oj0svb].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{C36D574B-EF9D-4F58-A61B-B86039D8BF48}' />
+    </worksheet>
+    <worksheet name='Drivers - Income vs Value'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='california_housing' name='federated.1r8oud61hccbs71bjx3vr1oj0svb' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1r8oud61hccbs71bjx3vr1oj0svb'>
+            <column caption='Med House Val' datatype='real' name='[MedHouseVal]' role='measure' type='quantitative' />
+            <column caption='Med Inc' datatype='real' name='[MedInc]' role='measure' type='quantitative' />
+            <column caption='Coastal Flag' datatype='string' name='[Calculation_1001]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='false' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <color column='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[Calculation_1001]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1r8oud61hccbs71bjx3vr1oj0svb].[MedHouseVal]</rows>
+        <cols>[federated.1r8oud61hccbs71bjx3vr1oj0svb].[MedInc]</cols>
+      </table>
+      <simple-id uuid='{A1000001-0000-0000-0000-000000000001}' />
+    </worksheet>
+    <worksheet name='Residuals Map'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='california_housing' name='federated.1r8oud61hccbs71bjx3vr1oj0svb' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1r8oud61hccbs71bjx3vr1oj0svb'>
+            <column caption='Med House Val' datatype='real' name='[MedHouseVal]' role='measure' type='quantitative' />
+            <column caption='Lat Bin' datatype='real' name='[Calculation_1003]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column caption='Lon Bin' datatype='real' name='[Calculation_1004]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column caption='Value Residual' datatype='real' name='[Calculation_1006]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1003]' derivation='None' name='[none:Calculation_1003:nk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1004]' derivation='None' name='[none:Calculation_1004:nk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1006]' derivation='Avg' name='[avg:Calculation_1006:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[avg:Calculation_1006:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1r8oud61hccbs71bjx3vr1oj0svb].[none:Calculation_1003:nk]</rows>
+        <cols>[federated.1r8oud61hccbs71bjx3vr1oj0svb].[none:Calculation_1004:nk]</cols>
+      </table>
+      <simple-id uuid='{A1000002-0000-0000-0000-000000000002}' />
+    </worksheet>
+    <worksheet name='Drivers - Age vs Value'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='california_housing' name='federated.1r8oud61hccbs71bjx3vr1oj0svb' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1r8oud61hccbs71bjx3vr1oj0svb'>
+            <column caption='Med House Val' datatype='real' name='[MedHouseVal]' role='measure' type='quantitative' />
+            <column caption='House Age' datatype='real' name='[HouseAge]' role='measure' type='quantitative' />
+            <column caption='Income Tier' datatype='string' name='[Calculation_1007]' role='dimension' type='nominal' />
+            <column-instance column='[MedHouseVal]' derivation='Avg' name='[avg:MedHouseVal:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[Calculation_1007]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1r8oud61hccbs71bjx3vr1oj0svb].[avg:MedHouseVal:qk]</rows>
+        <cols>[federated.1r8oud61hccbs71bjx3vr1oj0svb].[HouseAge]</cols>
+      </table>
+      <simple-id uuid='{A1000003-0000-0000-0000-000000000003}' />
+    </worksheet>
+    <worksheet name='Affordability by Region'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='california_housing' name='federated.1r8oud61hccbs71bjx3vr1oj0svb' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1r8oud61hccbs71bjx3vr1oj0svb'>
+            <column caption='Price-to-Income Ratio' datatype='real' name='[Calculation_1002]' role='measure' type='quantitative' />
+            <column caption='Income Tier' datatype='string' name='[Calculation_1007]' role='dimension' type='nominal' />
+            <column caption='Coastal Flag' datatype='string' name='[Calculation_1001]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1002]' derivation='Avg' name='[avg:Calculation_1002:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[Calculation_1001]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1r8oud61hccbs71bjx3vr1oj0svb].[avg:Calculation_1002:qk]</rows>
+        <cols>[federated.1r8oud61hccbs71bjx3vr1oj0svb].[Calculation_1007]</cols>
+      </table>
+      <simple-id uuid='{A1000004-0000-0000-0000-000000000004}' />
+    </worksheet>
+    <worksheet name='KPI - Block Groups'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='california_housing' name='federated.1r8oud61hccbs71bjx3vr1oj0svb' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1r8oud61hccbs71bjx3vr1oj0svb'>
+            <column caption='california_housing.csv' datatype='table' name='[__tableau_internal_object_id__].[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:california_housing.csv_4E4DA77C99974D3EA7123D8961467D08:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[__tableau_internal_object_id__].[cnt:california_housing.csv_4E4DA77C99974D3EA7123D8961467D08:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{A1000005-0000-0000-0000-000000000005}' />
+    </worksheet>
+    <worksheet name='KPI - Avg Med Value'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='california_housing' name='federated.1r8oud61hccbs71bjx3vr1oj0svb' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1r8oud61hccbs71bjx3vr1oj0svb'>
+            <column caption='Med House Val' datatype='real' name='[MedHouseVal]' role='measure' type='quantitative' />
+            <column-instance column='[MedHouseVal]' derivation='Avg' name='[avg:MedHouseVal:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[avg:MedHouseVal:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{A1000006-0000-0000-0000-000000000006}' />
+    </worksheet>
+    <worksheet name='KPI - Avg Med Income'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='california_housing' name='federated.1r8oud61hccbs71bjx3vr1oj0svb' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1r8oud61hccbs71bjx3vr1oj0svb'>
+            <column caption='Med Inc' datatype='real' name='[MedInc]' role='measure' type='quantitative' />
+            <column-instance column='[MedInc]' derivation='Avg' name='[avg:MedInc:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[avg:MedInc:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{A1000007-0000-0000-0000-000000000007}' />
+    </worksheet>
+    <worksheet name='KPI - Avg Price-to-Income'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='california_housing' name='federated.1r8oud61hccbs71bjx3vr1oj0svb' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1r8oud61hccbs71bjx3vr1oj0svb'>
+            <column caption='Price-to-Income Ratio' datatype='real' name='[Calculation_1002]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1002]' derivation='Avg' name='[avg:Calculation_1002:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[avg:Calculation_1002:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{A1000008-0000-0000-0000-000000000008}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='California Housing Dashboard'>
+      <style />
+      <size maxheight='800' maxwidth='1280' minheight='800' minwidth='1280' sizing-mode='fixed' />
+      <datasources>
+        <datasource name='Parameters' />
+      </datasources>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='15000' id='10' param='horz' type-v2='layout-flow' w='98400' x='800' y='800'>
+            <zone h='13000' id='101' name='KPI - Block Groups' w='24600' x='800' y='800'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='13000' id='102' name='KPI - Avg Med Value' w='24600' x='25400' y='800'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='13000' id='103' name='KPI - Avg Med Income' w='24600' x='50000' y='800'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='13000' id='104' name='KPI - Avg Price-to-Income' w='24600' x='74600' y='800'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone h='83000' id='15' param='vert' type-v2='layout-flow' w='98400' x='800' y='16800'>
+            <zone h='41000' id='21' param='horz' type-v2='layout-flow' w='98400' x='800' y='16800'>
+              <zone h='39400' id='222' name='Drivers - Income vs Value' w='49200' x='800' y='17400'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='39400' id='223' name='Residuals Map' w='49200' x='50800' y='17400'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone h='41000' id='31' param='horz' type-v2='layout-flow' w='98400' x='800' y='59400'>
+              <zone h='39400' id='332' name='Drivers - Age vs Value' w='49200' x='800' y='59800'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='39400' id='333' name='Affordability by Region' w='49200' x='50800' y='59800'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout name='Phone'>
+          <size maxheight='1600' minheight='1600' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='701' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='702' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='120' h='8000' id='711' name='KPI - Block Groups' is-fixed='true' w='98400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='120' h='8000' id='712' name='KPI - Avg Med Value' is-fixed='true' w='98400' x='800' y='9000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='120' h='8000' id='713' name='KPI - Avg Med Income' is-fixed='true' w='98400' x='800' y='17000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='120' h='8000' id='714' name='KPI - Avg Price-to-Income' is-fixed='true' w='98400' x='800' y='25000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='18000' id='715' name='Drivers - Income vs Value' is-fixed='true' w='98400' x='800' y='33000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='18000' id='716' name='Residuals Map' is-fixed='true' w='98400' x='800' y='51000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='14000' id='717' name='Drivers - Age vs Value' is-fixed='true' w='98400' x='800' y='69000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='14000' id='718' name='Affordability by Region' is-fixed='true' w='98400' x='800' y='83000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{8E4C2B71-6094-43D9-B7A1-F1DE2ABC9045}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{2644BAF2-0E2D-41ED-846E-2D895530DC53}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='384' name='Sheet 1' width='384'>
+      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
+      fL1A7gBqamqUSqU0PDys8vJyrVu3TplMRsPDw6qoqFA8HldlZaUaGxt19+5dRSIRtba25nts
+      ACgogQxAbW2tamtrv/LacsrKyv7r5wEAy+M5CQBYigAAgKUIAABYigAAgKUIAABYigAAgKUI
+      AABYigAAgKUIAABYigAAgKUIAABYigAAgKUIAABYigAAgKUIAABYigAAgKUIAABYigAAgKUI
+      AABYigAAgKUIAABYigAAgKUIAABYKpzvAZYzOzurjo4OpVIptbW1qaGhQUePHtXi4qL27Nmj
+      dDqts2fP6sc//rEcx9H58+cViUS0bdu2fI8OAAUjkAFIpVLau3evioqK9K9//Uv37t1Tc3Oz
+      EomEjh8/ri1btujmzZuanp5WLBZTf3+/qqur8z02ABSUQAagqqpKCwsLOnjwoFpaWjQ8PKzm
+      5maVlJTIGCNJ2rp1q7q7u7Vx40bF43Gl02lJUiaTke/7kiTf97OvA0Dwmdye3RgtLCxk14EM
+      wOLiot599119//vfV01NjW7duqVUKqXS0lJ5nidJisViGhgYUE9Pj3bs2KGuri5JUjj8xSV5
+      nifXdfNyDQCwck5uz+44ikaj2XUgA3DhwgWVlZVpYGBA09PTeuqpp/TRRx+psrJSjY2N2ePW
+      rVunGzduqLi4OH/DAkCBCmQA2tratGHDBklSUVGRYrGY9uzZo8XFRdXW1srzPPm+r1AopJaW
+      FhUXF2vXrl15nhoACksgA1BSUqKSkpIlr61evTr78cOPeR58/OXjAQD/He8DAABLEQAAsBQB
+      AABLEQAAsBQBAABLEQAAsBQBAABLEQAAsBQBAABLEQAAsBQBAABLEQAAsBQBAABLEQAAsBQB
+      AABLEQAAsBQBAABLEQAAsBQBAABLEQAAsBQBAABLEQAAsFRgA2CMke/72bXnecpkMjLGfOVz
+      vu8vWQMAvlk43wMsZ3FxUR999JE8z9Nrr72m0dFRnT17VsXFxaqvr1dVVZU+/PBDvf322wqF
+      Qjpy5IjKysq0e/fufI8OAAUjkAFIp9N64YUXdPr0aUnS8PCwtm/frtraWh0/flyxWExFRUUa
+      GxtTTU2NZmdnVVRU9JXzfHmnAAC2e/ieGMgArFq1asl606ZNeu+99xQOh/XCCy9IkrZs2aKe
+      nh4lk0lt2LBB09PTkqRMJpO9QAIAoLCY3J7dGGUymew6kAH4sk8++URvvvmmysvLtX//fj3z
+      zDOKRqPKZDK6fv26Xn75ZXV2dkqSwuEvLsnzPLmum6+xAWCFnNye3XEUiUSy60AGYHR0VN3d
+      3RoaGtKZM2e0adMmHT16VNFoVIlEQq7rKhwOq6GhQf39/XJdd8lFAQC+mWOMye2e41vieZ58
+      31/2Wf9/+xp2AAAKxVu/+atSGS9n59+YWK3fvrNPkuQ4jhPIHcByXNflZg4A36LAvg8AAJBb
+      BAAALEUAAMBSBAAALEUAAMBSBAAALEUAAMBSBAAALEUAAMBSBAAALEUAAMBSBAAALEUAAMBS
+      BAAALEUAAMBSBAAALEUAAMBSBAAALEUAAMBSBAAALEUAAMBSBAAALBXYABhjNDc3l12nUimN
+      jIwonU7L8zzNzc3JGCNJWlxc1OLiYr5GBYCCFMgA3L17V++++64OHjwoSUomk9q/f78mJiY0
+      ODio4eFh/f73v5fneTLG6MCBA+ro6Mjz1ABQWML5HmA5JSUlev3113Xo0CFJUk9Pj9ra2lRa
+      WqpEIqGRkRE1NTVpYGBA9fX1CofDCofvX8qDXYEkeZ4n3/fzcg0AEDTGGKXT6ew6kAEoKipa
+      sp6dnVUymVRFRYUuXryotrY2NTc3q7e3V8lkUq2trRoZGZGk7K5AkhzHUSgUyE0OADx2X74n
+      BjIAX1ZTU6NwOKzNmzdreHhYkuS6rsLhsG7cuKG9e/dmA/BgJyDdj4HrunmZGQCC6OF7YiAD
+      MDo6qu7ubt27d09nzpzR888/r+PHj+v69etqaWlRaWmpQqGQKisrNTIyonA4rOrq6nyPDQAF
+      JZABiMfjisfjS177wQ9+sOyxdXV1kqS2traczwUA3yU8IAcASxEAALAUAQAASxEAALAUAQAA
+      SxEAALDUin4N1Bij69ev69y5c9qzZ49CoVD21zABAIVlRTuAqakpHThwQLOzs3IcRydOnMjV
+      XACAHFtRAB78PySMMfrPf/6j0tLSnAwFAMi9FQWgsrJSP/vZz1RaWqpIJKLXXnstV3MBAHJs
+      RT8DmJ+f1wcffKDFxUWNj4+rpqZGO3fuzNVsAIAcWlEAotGofv7zn8sYo76+Pt28eTNXcwEA
+      cmxFAUilUjp06JDS6bTu3LmjkpKSXM0FAMixFQXAdV21trbK932FQiFt3LgxV3MBAHLskQNw
+      6tQpffzxx0tee+WVV/TCCy9860MBAHLvkQPw/PPPa/v27Utei0Qi3/pAAIDH45EDEIlE5Lqu
+      fve73+nzzz9XJBLRT37yE+3ZsyeH4wEAcmVFPwO4c+eOKisrtWvXLn3ve9/TJ598kqu5AAA5
+      tqI3glVUVKi4uFirV6/WH//4x1zNBAB4DB55BzA1NaXZ2Vm99dZbCoVCevHFF1VeXp7L2QAA
+      OfTIATDG6J///KfGx8eVSCTU3t6uzZs353I2AEAOPXIA1qxZo3feeUe+76u3t1d/+MMf1NbW
+      prfffjuX8wEAcuSRAzA3N6cjR46oq6tLrutq79692r17dy5nAwDk0CMHYGZmRrFYTL/+9a+1
+      atWqXM4EAHgMHvm3gOLxuNrb2x/LzT+TyejUqVM6evRo9rV0Oq0//elPun37tm7duqW//OUv
+      8n1fktTR0aHOzs6czwUA3yUreh/A45JMJvXEE0/os88+k3T/B9Dnzp3TmjVrlE6nlUqlNDc3
+      pzt37mjNmjUaGxtTdXX1sucyxjzO0QEg0B6+JwYyALFYTLFYLBuA8fFxeZ6neDyePaatrU2X
+      Ll1SU1OTGhoalEwmJd3fPTzYGfi+L8dxHv8FAMD/Sm6/YTXGKJVKZdeBDMCXdXV1yfM89ff3
+      6+bNm2ptbVVZWZnu3Lmjq1evateuXdl3JYfDX1yS53lyXTdfYwPACuX2G1bHcVRcXJxdBzIA
+      o6Ojunz5sj7//HOdO3dO+/btkyR9+umnisfj2YIlEgn19fUtuekDAB6NYwL4kNwYk32M4zjO
+      kj9Gv9yxDx7zfPlxDzsAAIXkrd/8VamMl7Pzb0ys1m/fuf8NteM4TiC/dXYcZ9kb93LP83nG
+      DwD/Oyv6n8EBAL47CAAAWIoAAIClCAAAWIoAAIClCAAAWIoAAIClCAAAWIoAAIClCAAAWIoA
+      AIClCAAAWIoAAIClCAAAWIoAAIClCAAAWIoAAIClCAAAWIoAAIClCAAAWIoAAIClCAAAWCqw
+      ATDGKJVKZdfpdFp3796VMUa+7y/5XCaTUSaTyceYAFCwwvkeYDnJZFJHjhyR4zj66U9/qqGh
+      IXV1dSkajaq4uFhNTU3av3+/fvnLXyoUCungwYMqLy/Xnj178j06ABSMQAbAdV3t27dPx44d
+      kyTF43HV19drbm5Ox44dk+/7qqqq0sjIiBKJhNLptIwxXzmP7/vLvg4ANjLSkqclgQxANBpd
+      sg6Hw+rv79f58+f1ox/9SJOTk2ppadGVK1d07949bd68WePj45LuX5zv+/kYGwACziz5pjiQ
+      AfiysbExXbhwQW+88YZc19Xk5KSKiookSf39/Wpvb88GIBz+4pI8z5PrunmZGQCCxpGTvXdK
+      AQ3A6Oiouru7dfv2bZ05c0bFxcUyxujw4cNau3atEomESkpK1NzcrIGBAYXDYZWXl+d7bAAo
+      KIEMQDweVzweX/Lajh07lj22qalJkvTcc8/lfC4A+C4J7K+BAgByiwAAgKUIAABYigAAgKUI
+      AABYigAAgKUIAABYigAAgKUIAABYigAAgKUIAABYigAAgKUIAABYigAAgKUIAABYigAAgKUI
+      AABYigAAgKUIAABYigAAgKUIAABYigAAgKUIAABYKrABSKfTun37dnY9Ojqqvr4+GWO0uLio
+      sbExGWMkSTMzM5qZmcnXqABQkAIZgKmpKR04cEAff/yxpPs3/08//VSTk5M6f/68bt26pT//
+      +c/KZDIyxujQoUPq7OzM89QAUFjC+R5gObFYTG+88YY++OADSdK1a9f00ksvKRaL6cCBA6qp
+      qVFzc7N6e3vV2NioaDQq13UlSb7vZ8+TyWTkeV5ergEAVs7k9uzGKJVKZdeBDEAotHRjYozJ
+      3uAdx5EkNTU16caNG0omk9q6datu3LiRPfbBoyHXdb9yLgAILie3Z3cchcNf3PYDGYAvq6qq
+      0tDQkOrq6rLDh0IhRaNRDQ8Pq7W1NRuAB6GQJM/zCAAAPOThe2IgAzA6Oqru7m5lMhmdOXNG
+      O3fu1IkTJ9TX16dXX31VCwsLikQiqqmp0djYmMLhsOrr6/M9NgAUlEAGIB6PKx6PL3nt1Vdf
+      zX5cWlqa/Xjt2rWSpObm5sczHAB8R/B8BAAsRQAAwFIEAAAsRQAAwFIEAAAsRQAAwFIEAAAs
+      RQAAwFIEAAAsRQAAwFIEAAAsRQAAwFIEAAAsRQAAwFIEAAAsRQAAwFIEAAAsRQAAwFIEAAAs
+      RQAAwFIEAAAsRQAAwFIEAAAsVTAB8DxPmUxGxhgZY+R5XvZzvu/L9/08TgcAhSec7wEexejo
+      qM6ePavi4mLV1dWpurpaBw8e1C9+8QuFQiEdOXJEZWVl2r17d75HBYCCURABGB4e1vbt21Vb
+      W6vjx4+rsrJSkUhEY2Njqqmp0ezsrIqKir7ydcYYdgYA8JCH74kFEYBNmzbpvffeU1FRkXbu
+      3ClJ2rJli3p6epRMJrVhwwZNT09LkjKZTPYCCQCAwmJye3ZjlMlksuuCCMAnn3yiN998U+Xl
+      5dq/f7+eeeYZRaNRZTIZXb9+XS+//LI6OzslSeHwF5fkeZ5c183X2ACwQk5uz+44ikQi2XVB
+      BGDTpk06evSootGoEomEXNdVOBxWQ0OD+vv75brukosCAHyzgghAY2Oj1q9fL9/3v/Ks/6mn
+      npIkfgAMACtUEAGQJNd1eZwDAN+ignkfAADg20UAAMBSBAAALEUAAMBSBAAALEUAAMBSBAAA
+      LEUAAMBSBAAALEUAAMBSBAAALEUAAMBSBAAALEUAAMBSBAAALEUAAMBSBAAALEUAAMBSBAAA
+      LEUAAMBSBAAALEUAAMBSBREAY4wGBwd1+PBhjY6O6t69e+rp6ZExRpI0PDyskZGRPE8JAIWl
+      IAIwMTGhy5cvq729XaWlpZqcnNShQ4e0sLAgY4xOnz6tK1eu5HtMACgo4XwP8CiuXbumSCSi
+      kydPavv27ZKk1tZWXb16VRs2bFBFRYVCofst8zwvuzPIZDJKp9N5mxsAVsbk9uzGaGFhIbsu
+      iAB4nqfGxkZVVVXp8OHDeu6555RIJDQ4OKi5uTk9/fTT2R2A4zjZrysqKpLruvkaGwBWyPnm
+      Q/4vZ3ccRaPR7LogHgE1NjZqcHBQ0v2bunT/QioqKnTr1i3FYrHssaFQSK7rcuMHgG9QEDuA
+      J554QnNzc/r000/V3t6uUCik8vJyrV+/XtPT04pEInryySfzPSYAFJSCCIDjOGppaVFLS8tX
+      PldRUSFJqqure9xjAUBBK4hHQACAbx8BAABLEQAAsNT/ByN/4Ly7yP9oAAAAAElFTkSuQmCC
+    </thumbnail>
+  </thumbnails>
+</workbook>
