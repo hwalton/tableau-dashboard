@@ -233,6 +233,245 @@
         <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
       </semantic-values>
     </datasource>
+    <datasource caption='Feature correlations (ML)' inline='true' name='federated.ml01_corr' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='feature correlations' name='textscan.ml01_corr'>
+            <connection class='textscan' directory='/Users/walton/Git/tableau-dashboard' filename='feature_correlations_full.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.ml01_corr' name='feature_correlations_full.csv' table='[feature_correlations_full#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+            <column datatype='string' name='Variable_X' ordinal='0' />
+            <column datatype='string' name='Variable_Y' ordinal='1' />
+            <column datatype='real' name='Pearson_r' ordinal='2' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[feature_correlations_full.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_GB&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Variable_X</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Variable_X]</local-name>
+            <parent-name>[feature_correlations_full.csv]</parent-name>
+            <remote-alias>Variable_X</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[feature_corr_full_MLBIN01]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Variable_Y</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Variable_Y]</local-name>
+            <parent-name>[feature_correlations_full.csv]</parent-name>
+            <remote-alias>Variable_Y</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[feature_corr_full_MLBIN01]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pearson_r</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Pearson_r]</local-name>
+            <parent-name>[feature_correlations_full.csv]</parent-name>
+            <remote-alias>Pearson_r</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[feature_corr_full_MLBIN01]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[Variable_X]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Variable_Y]' role='dimension' type='nominal' />
+      <column datatype='real' default-format='#0.000' name='[Pearson_r]' role='measure' type='quantitative' />
+      <column datatype='table' name='[__tableau_internal_object_id__].[feature_corr_full_MLBIN01]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='feature_correlations_full.csv' id='feature_corr_full_MLBIN01'>
+            <properties context=''>
+              <relation connection='textscan.ml01_corr' name='feature_correlations_full.csv' table='[feature_correlations_full#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+                  <column datatype='string' name='Variable_X' ordinal='0' />
+                  <column datatype='string' name='Variable_Y' ordinal='1' />
+                  <column datatype='real' name='Pearson_r' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='Feature histogram bins (ML)' inline='true' name='federated.ml02_hist' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='feature_histogram_bins' name='textscan.ml02_hist'>
+            <connection class='textscan' directory='/Users/walton/Git/tableau-dashboard' filename='feature_histogram_bins.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.ml02_hist' name='feature_histogram_bins.csv' table='[feature_histogram_bins#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+            <column datatype='string' name='Feature' ordinal='0' />
+            <column datatype='real' name='Value_bin_mid' ordinal='1' />
+            <column datatype='integer' name='BIN_COUNT' ordinal='2' />
+            <column datatype='string' name='pandas_dtype' ordinal='3' />
+            <column datatype='string' name='inferred_type' ordinal='4' />
+            <column datatype='string' name='skew_label' ordinal='5' />
+            <column datatype='real' name='skewness' ordinal='6' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[feature_histogram_bins.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_GB&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Feature</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Feature]</local-name>
+            <parent-name>[feature_histogram_bins.csv]</parent-name>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[feat_hist_MLBIN02]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Value_bin_mid</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Value_bin_mid]</local-name>
+            <parent-name>[feature_histogram_bins.csv]</parent-name>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[feat_hist_MLBIN02]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BIN_COUNT</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[BIN_COUNT]</local-name>
+            <parent-name>[feature_histogram_bins.csv]</parent-name>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[feat_hist_MLBIN02]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pandas_dtype</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[pandas_dtype]</local-name>
+            <parent-name>[feature_histogram_bins.csv]</parent-name>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[feat_hist_MLBIN02]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>inferred_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[inferred_type]</local-name>
+            <parent-name>[feature_histogram_bins.csv]</parent-name>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[feat_hist_MLBIN02]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>skew_label</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[skew_label]</local-name>
+            <parent-name>[feature_histogram_bins.csv]</parent-name>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[feat_hist_MLBIN02]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>skewness</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[skewness]</local-name>
+            <parent-name>[feature_histogram_bins.csv]</parent-name>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[feat_hist_MLBIN02]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Feature name' datatype='string' name='[Feature]' role='dimension' type='nominal' />
+      <column caption='Value bin midpoint' datatype='real' name='[Value_bin_mid]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[BIN_COUNT]' role='measure' type='quantitative' />
+      <column caption='pandas dtype' datatype='string' name='[pandas_dtype]' role='dimension' type='nominal' />
+      <column caption='inferred type (pandas)' datatype='string' name='[inferred_type]' role='dimension' type='nominal' />
+      <column datatype='string' name='[skew_label]' role='dimension' type='nominal' />
+      <column datatype='real' default-format='#0.00' name='[skewness]' role='measure' type='quantitative' />
+      <column datatype='table' name='[__tableau_internal_object_id__].[feat_hist_MLBIN02]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='feature_histogram_bins.csv' id='feat_hist_MLBIN02'>
+            <properties context=''>
+              <relation connection='textscan.ml02_hist' name='feature_histogram_bins.csv' table='[feature_histogram_bins#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+                  <column datatype='string' name='Feature' ordinal='0' />
+                  <column datatype='real' name='Value_bin_mid' ordinal='1' />
+                  <column datatype='integer' name='BIN_COUNT' ordinal='2' />
+                  <column datatype='string' name='pandas_dtype' ordinal='3' />
+                  <column datatype='string' name='inferred_type' ordinal='4' />
+                  <column datatype='string' name='skew_label' ordinal='5' />
+                  <column datatype='real' name='skewness' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
   </datasources>
   <worksheets>
     <worksheet name='Sheet 1'>
@@ -550,6 +789,82 @@
         <cols />
       </table>
       <simple-id uuid='{A1000008-0000-0000-0000-000000000008}' />
+    </worksheet>
+    <worksheet name='ML - Correlation matrix'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Feature correlations (ML)' name='federated.ml01_corr' />
+          </datasources>
+          <datasource-dependencies datasource='federated.ml01_corr'>
+            <column datatype='string' name='[Variable_X]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Variable_Y]' role='dimension' type='nominal' />
+            <column datatype='real' default-format='#0.000' name='[Pearson_r]' role='measure' type='quantitative' />
+            <column-instance column='[Variable_X]' derivation='None' name='[none:Variable_X:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Variable_Y]' derivation='None' name='[none:Variable_Y:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Pearson_r]' derivation='Avg' name='[avg:Pearson_r:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.ml01_corr].[avg:Pearson_r:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.ml01_corr].[none:Variable_Y:nk]</rows>
+        <cols>[federated.ml01_corr].[none:Variable_X:nk]</cols>
+      </table>
+      <simple-id uuid='{B2000001-0000-0000-0000-000000000001}' />
+    </worksheet>
+    <worksheet name='ML - Profiles and distributions'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Feature histogram bins (ML)' name='federated.ml02_hist' />
+          </datasources>
+          <datasource-dependencies datasource='federated.ml02_hist'>
+            <column caption='Feature name' datatype='string' name='[Feature]' role='dimension' type='nominal' />
+            <column caption='Value bin midpoint' datatype='real' name='[Value_bin_mid]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[BIN_COUNT]' role='measure' type='quantitative' />
+            <column caption='pandas dtype' datatype='string' name='[pandas_dtype]' role='dimension' type='nominal' />
+            <column caption='inferred type (pandas)' datatype='string' name='[inferred_type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[skew_label]' role='dimension' type='nominal' />
+            <column datatype='real' name='[skewness]' role='measure' type='quantitative' />
+            <column-instance column='[Feature]' derivation='None' name='[none:Feature:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Value_bin_mid]' derivation='None' name='[none:Value_bin_mid:nk]' pivot='key' type='ordinal' />
+            <column-instance column='[BIN_COUNT]' derivation='Sum' name='[sum:BIN_COUNT:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[skew_label]' derivation='None' name='[none:skew_label:nk]' pivot='key' type='nominal' />
+            <column-instance column='[pandas_dtype]' derivation='None' name='[none:pandas_dtype:nk]' pivot='key' type='nominal' />
+            <column-instance column='[skewness]' derivation='Avg' name='[avg:skewness:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.ml02_hist].[none:Feature:nk]' />
+              <tooltip column='[federated.ml02_hist].[none:pandas_dtype:nk]' />
+              <tooltip column='[federated.ml02_hist].[none:skew_label:nk]' />
+              <tooltip column='[federated.ml02_hist].[avg:skewness:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.ml02_hist].[sum:BIN_COUNT:qk]</rows>
+        <cols>[federated.ml02_hist].[none:Value_bin_mid:nk]</cols>
+      </table>
+      <simple-id uuid='{B2000002-0000-0000-0000-000000000002}' />
     </worksheet>
   </worksheets>
   <dashboards>
