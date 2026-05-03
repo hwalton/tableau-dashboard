@@ -16,223 +16,6 @@
     <preference name='ui.shelf.height' value='26' />
   </preferences>
   <datasources>
-    <datasource caption='california_housing' inline='true' name='federated.1r8oud61hccbs71bjx3vr1oj0svb' version='18.1'>
-      <connection class='federated'>
-        <named-connections>
-          <named-connection caption='california_housing' name='textscan.1j42les0so36nf176s1mn05okh01'>
-            <connection class='textscan' directory='/Users/walton/Git/tableau-dashboard' filename='california_housing.csv' password='' server='' />
-          </named-connection>
-        </named-connections>
-        <relation connection='textscan.1j42les0so36nf176s1mn05okh01' name='california_housing.csv' table='[california_housing#csv]' type='table'>
-          <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
-            <column datatype='real' name='MedInc' ordinal='0' />
-            <column datatype='real' name='HouseAge' ordinal='1' />
-            <column datatype='real' name='AveRooms' ordinal='2' />
-            <column datatype='real' name='AveBedrms' ordinal='3' />
-            <column datatype='real' name='Population' ordinal='4' />
-            <column datatype='real' name='AveOccup' ordinal='5' />
-            <column datatype='real' name='Latitude' ordinal='6' />
-            <column datatype='real' name='Longitude' ordinal='7' />
-            <column datatype='real' name='MedHouseVal' ordinal='8' />
-          </columns>
-        </relation>
-        <metadata-records>
-          <metadata-record class='capability'>
-            <remote-name />
-            <remote-type>0</remote-type>
-            <parent-name>[california_housing.csv]</parent-name>
-            <remote-alias />
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
-              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
-              <attribute datatype='string' name='currency'>&quot;£&quot;</attribute>
-              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
-              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
-              <attribute datatype='string' name='locale'>&quot;en_GB&quot;</attribute>
-              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
-            </attributes>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>MedInc</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[MedInc]</local-name>
-            <parent-name>[california_housing.csv]</parent-name>
-            <remote-alias>MedInc</remote-alias>
-            <ordinal>0</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>HouseAge</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[HouseAge]</local-name>
-            <parent-name>[california_housing.csv]</parent-name>
-            <remote-alias>HouseAge</remote-alias>
-            <ordinal>1</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>AveRooms</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[AveRooms]</local-name>
-            <parent-name>[california_housing.csv]</parent-name>
-            <remote-alias>AveRooms</remote-alias>
-            <ordinal>2</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>AveBedrms</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[AveBedrms]</local-name>
-            <parent-name>[california_housing.csv]</parent-name>
-            <remote-alias>AveBedrms</remote-alias>
-            <ordinal>3</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Population</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[Population]</local-name>
-            <parent-name>[california_housing.csv]</parent-name>
-            <remote-alias>Population</remote-alias>
-            <ordinal>4</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>AveOccup</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[AveOccup]</local-name>
-            <parent-name>[california_housing.csv]</parent-name>
-            <remote-alias>AveOccup</remote-alias>
-            <ordinal>5</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Latitude</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[Latitude]</local-name>
-            <parent-name>[california_housing.csv]</parent-name>
-            <remote-alias>Latitude</remote-alias>
-            <ordinal>6</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Longitude</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[Longitude]</local-name>
-            <parent-name>[california_housing.csv]</parent-name>
-            <remote-alias>Longitude</remote-alias>
-            <ordinal>7</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>MedHouseVal</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[MedHouseVal]</local-name>
-            <parent-name>[california_housing.csv]</parent-name>
-            <remote-alias>MedHouseVal</remote-alias>
-            <ordinal>8</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]</object-id>
-          </metadata-record>
-        </metadata-records>
-      </connection>
-      <aliases enabled='yes' />
-      <column caption='Ave Bedrms' datatype='real' name='[AveBedrms]' role='measure' type='quantitative' />
-      <column caption='Ave Occup' datatype='real' name='[AveOccup]' role='measure' type='quantitative' />
-      <column caption='Ave Rooms' datatype='real' name='[AveRooms]' role='measure' type='quantitative' />
-      <column caption='House Age' datatype='real' name='[HouseAge]' role='measure' type='quantitative' />
-      <column aggregation='Avg' datatype='real' name='[Latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
-      <column aggregation='Avg' datatype='real' name='[Longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
-      <column caption='Med House Val' datatype='real' name='[MedHouseVal]' role='measure' type='quantitative' />
-      <column caption='Med Inc' datatype='real' name='[MedInc]' role='measure' type='quantitative' />
-      <column caption='california_housing.csv' datatype='table' name='[__tableau_internal_object_id__].[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]' role='measure' type='quantitative' />
-      <column caption='Coastal Flag' datatype='string' name='[Calculation_1001]' role='dimension' type='nominal'>
-        <calculation class='tableau' formula='IF [Longitude] &lt;= -121 THEN &quot;Coastal&quot; ELSE &quot;Inland&quot; END' />
-      </column>
-      <column caption='Price-to-Income Ratio' datatype='real' default-format='#,##0.00' name='[Calculation_1002]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='[MedHouseVal] / [MedInc]' />
-      </column>
-      <column caption='Lat Bin' datatype='real' default-format='#,##0.0' name='[Calculation_1003]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative'>
-        <calculation class='tableau' formula='ROUND([Latitude]*5)/5' />
-      </column>
-      <column caption='Lon Bin' datatype='real' default-format='#,##0.0' name='[Calculation_1004]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative'>
-        <calculation class='tableau' formula='ROUND([Longitude]*5)/5' />
-      </column>
-      <column caption='Region Avg Value' datatype='real' default-format='#,##0.00' name='[Calculation_1005]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='{ FIXED [Calculation_1001] : AVG([MedHouseVal]) }' />
-      </column>
-      <column caption='Value residual (red = pricier vs coastal / inland avg)' datatype='real' default-format='#,##0.00' name='[Calculation_1006]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='[MedHouseVal] - [Calculation_1005]' />
-      </column>
-      <column caption='Income Tier' datatype='string' name='[Calculation_1007]' role='dimension' type='nominal'>
-        <calculation class='tableau' formula='IF [MedInc] &gt;= 6 THEN &quot;High&quot; ELSEIF [MedInc] &gt;= 3 THEN &quot;Mid&quot; ELSE &quot;Low&quot; END' />
-      </column>
-      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
-      <semantic-values>
-        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
-      </semantic-values>
-      <date-options start-of-week='monday' />
-      <object-graph>
-        <objects>
-          <object caption='california_housing.csv' id='california_housing.csv_4E4DA77C99974D3EA7123D8961467D08'>
-            <properties context=''>
-              <relation connection='textscan.1j42les0so36nf176s1mn05okh01' name='california_housing.csv' table='[california_housing#csv]' type='table'>
-                <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
-                  <column datatype='real' name='MedInc' ordinal='0' />
-                  <column datatype='real' name='HouseAge' ordinal='1' />
-                  <column datatype='real' name='AveRooms' ordinal='2' />
-                  <column datatype='real' name='AveBedrms' ordinal='3' />
-                  <column datatype='real' name='Population' ordinal='4' />
-                  <column datatype='real' name='AveOccup' ordinal='5' />
-                  <column datatype='real' name='Latitude' ordinal='6' />
-                  <column datatype='real' name='Longitude' ordinal='7' />
-                  <column datatype='real' name='MedHouseVal' ordinal='8' />
-                </columns>
-              </relation>
-            </properties>
-          </object>
-        </objects>
-      </object-graph>
-    </datasource>
-    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
-      <aliases enabled='yes' />
-      <column caption='Min Population' datatype='integer' default-format='#,##0' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='200'>
-        <calculation class='tableau' formula='200' />
-        <range granularity='1' max='5000' min='0' />
-      </column>
-      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
-      <semantic-values>
-        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
-      </semantic-values>
-    </datasource>
     <datasource caption='Feature correlations (ML)' inline='true' name='federated.ml01_corr' version='18.1'>
       <connection class='federated'>
         <named-connections>
@@ -247,65 +30,11 @@
             <column datatype='real' name='Pearson_r' ordinal='2' />
           </columns>
         </relation>
-        <metadata-records>
-          <metadata-record class='capability'>
-            <remote-name />
-            <remote-type>0</remote-type>
-            <parent-name>[feature_correlations_full.csv]</parent-name>
-            <remote-alias />
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
-              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
-              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
-              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
-              <attribute datatype='string' name='locale'>&quot;en_GB&quot;</attribute>
-            </attributes>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Variable_X</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[Variable_X]</local-name>
-            <parent-name>[feature_correlations_full.csv]</parent-name>
-            <remote-alias>Variable_X</remote-alias>
-            <ordinal>0</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[feature_corr_full_MLBIN01]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Variable_Y</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[Variable_Y]</local-name>
-            <parent-name>[feature_correlations_full.csv]</parent-name>
-            <remote-alias>Variable_Y</remote-alias>
-            <ordinal>1</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[feature_corr_full_MLBIN01]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Pearson_r</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[Pearson_r]</local-name>
-            <parent-name>[feature_correlations_full.csv]</parent-name>
-            <remote-alias>Pearson_r</remote-alias>
-            <ordinal>2</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[feature_corr_full_MLBIN01]</object-id>
-          </metadata-record>
-        </metadata-records>
       </connection>
       <aliases enabled='yes' />
       <column datatype='string' name='[Variable_X]' role='dimension' type='nominal' />
       <column datatype='string' name='[Variable_Y]' role='dimension' type='nominal' />
       <column datatype='real' default-format='#0.000' name='[Pearson_r]' role='measure' type='quantitative' />
-      <column datatype='table' name='[__tableau_internal_object_id__].[feature_corr_full_MLBIN01]' role='measure' type='quantitative' />
       <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
@@ -336,118 +65,25 @@
         <relation connection='textscan.ml02_hist' name='feature_histogram_bins.csv' table='[feature_histogram_bins#csv]' type='table'>
           <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
             <column datatype='string' name='Feature' ordinal='0' />
-            <column datatype='real' name='Value_bin_mid' ordinal='1' />
-            <column datatype='integer' name='BIN_COUNT' ordinal='2' />
-            <column datatype='string' name='pandas_dtype' ordinal='3' />
-            <column datatype='string' name='inferred_type' ordinal='4' />
-            <column datatype='string' name='skew_label' ordinal='5' />
-            <column datatype='real' name='skewness' ordinal='6' />
+            <column datatype='integer' name='bin_index' ordinal='1' />
+            <column datatype='real' name='Value_bin_mid' ordinal='2' />
+            <column datatype='integer' name='BIN_COUNT' ordinal='3' />
+            <column datatype='string' name='pandas_dtype' ordinal='4' />
+            <column datatype='string' name='inferred_type' ordinal='5' />
+            <column datatype='string' name='skew_label' ordinal='6' />
+            <column datatype='real' name='skewness' ordinal='7' />
           </columns>
         </relation>
-        <metadata-records>
-          <metadata-record class='capability'>
-            <remote-name />
-            <remote-type>0</remote-type>
-            <parent-name>[feature_histogram_bins.csv]</parent-name>
-            <remote-alias />
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
-              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
-              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
-              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
-              <attribute datatype='string' name='locale'>&quot;en_GB&quot;</attribute>
-            </attributes>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Feature</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[Feature]</local-name>
-            <parent-name>[feature_histogram_bins.csv]</parent-name>
-            <ordinal>0</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[feat_hist_MLBIN02]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Value_bin_mid</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[Value_bin_mid]</local-name>
-            <parent-name>[feature_histogram_bins.csv]</parent-name>
-            <ordinal>1</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[feat_hist_MLBIN02]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>BIN_COUNT</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[BIN_COUNT]</local-name>
-            <parent-name>[feature_histogram_bins.csv]</parent-name>
-            <ordinal>2</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[feat_hist_MLBIN02]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>pandas_dtype</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[pandas_dtype]</local-name>
-            <parent-name>[feature_histogram_bins.csv]</parent-name>
-            <ordinal>3</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[feat_hist_MLBIN02]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>inferred_type</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[inferred_type]</local-name>
-            <parent-name>[feature_histogram_bins.csv]</parent-name>
-            <ordinal>4</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[feat_hist_MLBIN02]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>skew_label</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[skew_label]</local-name>
-            <parent-name>[feature_histogram_bins.csv]</parent-name>
-            <ordinal>5</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[feat_hist_MLBIN02]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>skewness</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[skewness]</local-name>
-            <parent-name>[feature_histogram_bins.csv]</parent-name>
-            <ordinal>6</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[feat_hist_MLBIN02]</object-id>
-          </metadata-record>
-        </metadata-records>
       </connection>
       <aliases enabled='yes' />
       <column caption='Feature name' datatype='string' name='[Feature]' role='dimension' type='nominal' />
-      <column caption='Value bin midpoint' datatype='real' name='[Value_bin_mid]' role='dimension' type='quantitative' />
+      <column caption='Bin index' datatype='integer' name='[bin_index]' role='dimension' type='ordinal' />
+      <column caption='Value bin midpoint' datatype='real' name='[Value_bin_mid]' role='measure' type='quantitative' />
       <column datatype='integer' name='[BIN_COUNT]' role='measure' type='quantitative' />
       <column caption='pandas dtype' datatype='string' name='[pandas_dtype]' role='dimension' type='nominal' />
       <column caption='inferred type (pandas)' datatype='string' name='[inferred_type]' role='dimension' type='nominal' />
       <column datatype='string' name='[skew_label]' role='dimension' type='nominal' />
       <column datatype='real' default-format='#0.00' name='[skewness]' role='measure' type='quantitative' />
-      <column datatype='table' name='[__tableau_internal_object_id__].[feat_hist_MLBIN02]' role='measure' type='quantitative' />
       <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
@@ -459,12 +95,13 @@
               <relation connection='textscan.ml02_hist' name='feature_histogram_bins.csv' table='[feature_histogram_bins#csv]' type='table'>
                 <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
                   <column datatype='string' name='Feature' ordinal='0' />
-                  <column datatype='real' name='Value_bin_mid' ordinal='1' />
-                  <column datatype='integer' name='BIN_COUNT' ordinal='2' />
-                  <column datatype='string' name='pandas_dtype' ordinal='3' />
-                  <column datatype='string' name='inferred_type' ordinal='4' />
-                  <column datatype='string' name='skew_label' ordinal='5' />
-                  <column datatype='real' name='skewness' ordinal='6' />
+                  <column datatype='integer' name='bin_index' ordinal='1' />
+                  <column datatype='real' name='Value_bin_mid' ordinal='2' />
+                  <column datatype='integer' name='BIN_COUNT' ordinal='3' />
+                  <column datatype='string' name='pandas_dtype' ordinal='4' />
+                  <column datatype='string' name='inferred_type' ordinal='5' />
+                  <column datatype='string' name='skew_label' ordinal='6' />
+                  <column datatype='real' name='skewness' ordinal='7' />
                 </columns>
               </relation>
             </properties>
@@ -472,77 +109,170 @@
         </objects>
       </object-graph>
     </datasource>
-    <datasource caption='KPI summary' inline='true' name='federated.kpi_summ01' version='18.1'>
+    <datasource caption='Housing head (preview)' inline='true' name='federated.head01' version='18.1'>
       <connection class='federated'>
         <named-connections>
-          <named-connection caption='kpi_summary' name='textscan.ml03_kpi'>
-            <connection class='textscan' directory='/Users/walton/Git/tableau-dashboard' filename='kpi_summary.csv' password='' server='' />
+          <named-connection caption='housing_head_long' name='textscan.head01'>
+            <connection class='textscan' directory='/Users/walton/Git/tableau-dashboard' filename='housing_head_long.csv' password='' server='' />
           </named-connection>
         </named-connections>
-        <relation connection='textscan.ml03_kpi' name='kpi_summary.csv' table='[kpi_summary#csv]' type='table'>
+        <relation connection='textscan.head01' name='housing_head_long.csv' table='[housing_head_long#csv]' type='table'>
           <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
-            <column datatype='string' name='metric' ordinal='0' />
-            <column datatype='real' name='value' ordinal='1' />
+            <column datatype='integer' name='row_id' ordinal='0' />
+            <column datatype='string' name='measure' ordinal='1' />
+            <column datatype='real' name='value' ordinal='2' />
           </columns>
         </relation>
-        <metadata-records>
-          <metadata-record class='capability'>
-            <remote-name />
-            <remote-type>0</remote-type>
-            <parent-name>[kpi_summary.csv]</parent-name>
-            <remote-alias />
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
-              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
-              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
-              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
-              <attribute datatype='string' name='locale'>&quot;en_GB&quot;</attribute>
-            </attributes>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>metric</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[metric]</local-name>
-            <parent-name>[kpi_summary.csv]</parent-name>
-            <ordinal>0</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[kpi_summary_MLKPI01]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>value</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[value]</local-name>
-            <parent-name>[kpi_summary.csv]</parent-name>
-            <ordinal>1</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[kpi_summary_MLKPI01]</object-id>
-          </metadata-record>
-        </metadata-records>
       </connection>
       <aliases enabled='yes' />
-      <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal' />
+      <column caption='Row id' datatype='integer' name='[row_id]' role='dimension' type='ordinal' />
+      <column caption='Measure' datatype='string' name='[measure]' role='dimension' type='nominal' />
       <column datatype='real' default-format='#,##0.######' name='[value]' role='measure' type='quantitative' />
-      <column datatype='table' name='[__tableau_internal_object_id__].[kpi_summary_MLKPI01]' role='measure' type='quantitative' />
       <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
       </semantic-values>
       <object-graph>
         <objects>
-          <object caption='kpi_summary.csv' id='kpi_summary_MLKPI01'>
+          <object caption='housing_head_long.csv' id='housing_head_LONG01'>
             <properties context=''>
-              <relation connection='textscan.ml03_kpi' name='kpi_summary.csv' table='[kpi_summary#csv]' type='table'>
-                <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
-                  <column datatype='string' name='metric' ordinal='0' />
-                  <column datatype='real' name='value' ordinal='1' />
-                </columns>
-              </relation>
+              <relation connection='textscan.head01' name='housing_head_long.csv' table='[housing_head_long#csv]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='Feature schema (info)' inline='true' name='federated.cells_schema' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='feature_cells_schema' name='textscan.cells_schema'>
+            <connection class='textscan' directory='/Users/walton/Git/tableau-dashboard' filename='feature_cells_schema.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.cells_schema' name='feature_cells_schema.csv' table='[feature_cells_schema#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+            <column datatype='string' name='Feature' ordinal='0' />
+            <column datatype='integer' name='stat_rank' ordinal='1' />
+            <column datatype='string' name='stat' ordinal='2' />
+            <column datatype='string' name='cell' ordinal='3' />
+          </columns>
+        </relation>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[Feature]' role='dimension' type='nominal' />
+      <column caption='Stat rank' datatype='integer' name='[stat_rank]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[stat]' role='dimension' type='nominal' />
+      <column datatype='string' name='[cell]' role='dimension' type='nominal' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='feature_cells_schema.csv' id='feature_cells_SCHEMA01'>
+            <properties context=''>
+              <relation connection='textscan.cells_schema' name='feature_cells_schema.csv' table='[feature_cells_schema#csv]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='Feature stats (describe)' inline='true' name='federated.cells_stats01' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='feature_cells_stats' name='textscan.cells_stats'>
+            <connection class='textscan' directory='/Users/walton/Git/tableau-dashboard' filename='feature_cells_stats.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.cells_stats' name='feature_cells_stats.csv' table='[feature_cells_stats#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+            <column datatype='string' name='Feature' ordinal='0' />
+            <column datatype='integer' name='stat_rank' ordinal='1' />
+            <column datatype='string' name='stat' ordinal='2' />
+            <column datatype='string' name='cell' ordinal='3' />
+          </columns>
+        </relation>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[Feature]' role='dimension' type='nominal' />
+      <column caption='Stat rank' datatype='integer' name='[stat_rank]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[stat]' role='dimension' type='nominal' />
+      <column datatype='string' name='[cell]' role='dimension' type='nominal' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='feature_cells_stats.csv' id='feature_cells_STATS01'>
+            <properties context=''>
+              <relation connection='textscan.cells_stats' name='feature_cells_stats.csv' table='[feature_cells_stats#csv]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='Ratio features (bedrooms_ratio histogram)' inline='true' name='federated.ratio01' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='housing_ratio_features' name='textscan.ratio01'>
+            <connection class='textscan' directory='/Users/walton/Git/tableau-dashboard' filename='housing_ratio_features.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.ratio01' name='housing_ratio_features.csv' table='[housing_ratio_features#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+            <column datatype='string' name='Feature' ordinal='0' />
+            <column datatype='integer' name='bin_index' ordinal='1' />
+            <column datatype='real' name='value_bin_mid' ordinal='2' />
+            <column datatype='integer' name='count' ordinal='3' />
+          </columns>
+        </relation>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[Feature]' role='dimension' type='nominal' />
+      <column caption='Bin index' datatype='integer' name='[bin_index]' role='dimension' type='ordinal' />
+      <column caption='Value bin midpoint' datatype='real' default-format='#,##0.000' name='[value_bin_mid]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[count]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='housing_ratio_features.csv' id='housing_ratio_RATIO01'>
+            <properties context=''>
+              <relation connection='textscan.ratio01' name='housing_ratio_features.csv' table='[housing_ratio_features#csv]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='Ratio scatter (bedrooms_ratio vs MedHouseVal)' inline='true' name='federated.scat01' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='housing_ratio_scatter' name='textscan.scat01'>
+            <connection class='textscan' directory='/Users/walton/Git/tableau-dashboard' filename='housing_ratio_scatter.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.scat01' name='housing_ratio_scatter.csv' table='[housing_ratio_scatter#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+            <column datatype='real' name='bedrooms_ratio' ordinal='0' />
+            <column datatype='real' name='MedHouseVal' ordinal='1' />
+          </columns>
+        </relation>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Bedrooms ratio' datatype='real' default-format='#,##0.000' name='[bedrooms_ratio]' role='measure' type='quantitative' />
+      <column caption='Med House Val' datatype='real' default-format='#,##0.00' name='[MedHouseVal]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='housing_ratio_scatter.csv' id='housing_ratio_scat_SCAT01'>
+            <properties context=''>
+              <relation connection='textscan.scat01' name='housing_ratio_scatter.csv' table='[housing_ratio_scatter#csv]' type='table' />
             </properties>
           </object>
         </objects>
@@ -550,197 +280,19 @@
     </datasource>
   </datasources>
   <worksheets>
-    <worksheet name='Sheet 1'>
+    <worksheet name='Data preview (head)'>
       <table>
         <view>
           <datasources>
-            <datasource caption='california_housing' name='federated.1r8oud61hccbs71bjx3vr1oj0svb' />
+            <datasource caption='Housing head (preview)' name='federated.head01' />
           </datasources>
-          <datasource-dependencies datasource='federated.1r8oud61hccbs71bjx3vr1oj0svb'>
-            <column caption='Ave Bedrms' datatype='real' name='[AveBedrms]' role='measure' type='quantitative' />
-            <column caption='Ave Occup' datatype='real' name='[AveOccup]' role='measure' type='quantitative' />
-            <column caption='Ave Rooms' datatype='real' name='[AveRooms]' role='measure' type='quantitative' />
-            <column caption='House Age' datatype='real' name='[HouseAge]' role='measure' type='quantitative' />
-            <column aggregation='Avg' datatype='real' name='[Latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
-            <column aggregation='Avg' datatype='real' name='[Longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
-            <column caption='Med House Val' datatype='real' name='[MedHouseVal]' role='measure' type='quantitative' />
-            <column caption='Med Inc' datatype='real' name='[MedInc]' role='measure' type='quantitative' />
-            <column datatype='real' name='[Population]' role='measure' type='quantitative' />
-            <column caption='california_housing.csv' datatype='table' name='[__tableau_internal_object_id__].[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]' role='measure' type='quantitative' />
-            <column-instance column='[__tableau_internal_object_id__].[california_housing.csv_4E4DA77C99974D3EA7123D8961467D08]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:california_housing.csv_4E4DA77C99974D3EA7123D8961467D08:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Latitude]' derivation='Avg' name='[avg:Latitude:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Longitude]' derivation='Avg' name='[avg:Longitude:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[AveBedrms]' derivation='Sum' name='[sum:AveBedrms:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[AveOccup]' derivation='Sum' name='[sum:AveOccup:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[AveRooms]' derivation='Sum' name='[sum:AveRooms:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[HouseAge]' derivation='Sum' name='[sum:HouseAge:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[MedHouseVal]' derivation='Sum' name='[sum:MedHouseVal:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[MedInc]' derivation='Sum' name='[sum:MedInc:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Population]' derivation='Sum' name='[sum:Population:qk]' pivot='key' type='quantitative' />
-          </datasource-dependencies>
-          <filter class='categorical' column='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[:Measure Names]'>
-            <groupfilter function='level-members' level='[:Measure Names]' />
-          </filter>
-          <slices>
-            <column>[federated.1r8oud61hccbs71bjx3vr1oj0svb].[:Measure Names]</column>
-          </slices>
-          <aggregation value='true' />
-        </view>
-        <style />
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-          </pane>
-        </panes>
-        <rows>[federated.1r8oud61hccbs71bjx3vr1oj0svb].[Multiple Values]</rows>
-        <cols>[federated.1r8oud61hccbs71bjx3vr1oj0svb].[:Measure Names]</cols>
-      </table>
-      <simple-id uuid='{C36D574B-EF9D-4F58-A61B-B86039D8BF48}' />
-    </worksheet>
-    <worksheet name='Drivers - Income vs Value'>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='california_housing' name='federated.1r8oud61hccbs71bjx3vr1oj0svb' />
-          </datasources>
-          <datasource-dependencies datasource='federated.1r8oud61hccbs71bjx3vr1oj0svb'>
-            <column caption='Med House Val' datatype='real' name='[MedHouseVal]' role='measure' type='quantitative' />
-            <column caption='Med Inc' datatype='real' name='[MedInc]' role='measure' type='quantitative' />
-            <column caption='Coastal Flag' datatype='string' name='[Calculation_1001]' role='dimension' type='nominal' />
-          </datasource-dependencies>
-          <aggregation value='false' />
-        </view>
-        <style />
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Circle' />
-            <encodings>
-              <color column='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[Calculation_1001]' />
-            </encodings>
-          </pane>
-        </panes>
-        <rows>[federated.1r8oud61hccbs71bjx3vr1oj0svb].[MedHouseVal]</rows>
-        <cols>[federated.1r8oud61hccbs71bjx3vr1oj0svb].[MedInc]</cols>
-      </table>
-      <simple-id uuid='{A1000001-0000-0000-0000-000000000001}' />
-    </worksheet>
-    <worksheet name='Residuals Map'>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='california_housing' name='federated.1r8oud61hccbs71bjx3vr1oj0svb' />
-          </datasources>
-          <datasource-dependencies datasource='federated.1r8oud61hccbs71bjx3vr1oj0svb'>
-            <column caption='Med House Val' datatype='real' name='[MedHouseVal]' role='measure' type='quantitative' />
-            <column caption='Lat Bin' datatype='real' name='[Calculation_1003]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
-            <column caption='Lon Bin' datatype='real' name='[Calculation_1004]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
-            <column caption='Value residual (red = pricier vs coastal / inland avg)' datatype='real' name='[Calculation_1006]' role='measure' type='quantitative' />
-            <column-instance column='[Calculation_1003]' derivation='None' name='[none:Calculation_1003:nk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_1004]' derivation='None' name='[none:Calculation_1004:nk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_1006]' derivation='Avg' name='[avg:Calculation_1006:qk]' pivot='key' type='quantitative' />
-          </datasource-dependencies>
-          <aggregation value='true' />
-        </view>
-        <style>
-          <style-rule element='mark'>
-            <encoding attr='color' field='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[avg:Calculation_1006:qk]' palette='tableau-red-blue' reverse='true' type='interpolated' />
-          </style-rule>
-        </style>
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Square' />
-            <encodings>
-              <color column='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[avg:Calculation_1006:qk]' />
-            </encodings>
-          </pane>
-        </panes>
-        <rows>[federated.1r8oud61hccbs71bjx3vr1oj0svb].[none:Calculation_1003:nk]</rows>
-        <cols>[federated.1r8oud61hccbs71bjx3vr1oj0svb].[none:Calculation_1004:nk]</cols>
-      </table>
-      <simple-id uuid='{A1000002-0000-0000-0000-000000000002}' />
-    </worksheet>
-    <worksheet name='Drivers - Age vs Value'>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='california_housing' name='federated.1r8oud61hccbs71bjx3vr1oj0svb' />
-          </datasources>
-          <datasource-dependencies datasource='federated.1r8oud61hccbs71bjx3vr1oj0svb'>
-            <column caption='Med House Val' datatype='real' name='[MedHouseVal]' role='measure' type='quantitative' />
-            <column caption='House Age' datatype='real' name='[HouseAge]' role='measure' type='quantitative' />
-            <column caption='Income Tier' datatype='string' name='[Calculation_1007]' role='dimension' type='nominal' />
-            <column-instance column='[MedHouseVal]' derivation='Avg' name='[avg:MedHouseVal:qk]' pivot='key' type='quantitative' />
-          </datasource-dependencies>
-          <aggregation value='true' />
-        </view>
-        <style />
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Bar' />
-            <encodings>
-              <color column='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[Calculation_1007]' />
-            </encodings>
-          </pane>
-        </panes>
-        <rows>[federated.1r8oud61hccbs71bjx3vr1oj0svb].[avg:MedHouseVal:qk]</rows>
-        <cols>[federated.1r8oud61hccbs71bjx3vr1oj0svb].[HouseAge]</cols>
-      </table>
-      <simple-id uuid='{A1000003-0000-0000-0000-000000000003}' />
-    </worksheet>
-    <worksheet name='Affordability by Region'>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='california_housing' name='federated.1r8oud61hccbs71bjx3vr1oj0svb' />
-          </datasources>
-          <datasource-dependencies datasource='federated.1r8oud61hccbs71bjx3vr1oj0svb'>
-            <column caption='Price-to-Income Ratio' datatype='real' name='[Calculation_1002]' role='measure' type='quantitative' />
-            <column caption='Income Tier' datatype='string' name='[Calculation_1007]' role='dimension' type='nominal' />
-            <column caption='Coastal Flag' datatype='string' name='[Calculation_1001]' role='dimension' type='nominal' />
-            <column-instance column='[Calculation_1002]' derivation='Avg' name='[avg:Calculation_1002:qk]' pivot='key' type='quantitative' />
-          </datasource-dependencies>
-          <aggregation value='true' />
-        </view>
-        <style />
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Bar' />
-            <encodings>
-              <color column='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[Calculation_1001]' />
-            </encodings>
-          </pane>
-        </panes>
-        <rows>[federated.1r8oud61hccbs71bjx3vr1oj0svb].[avg:Calculation_1002:qk]</rows>
-        <cols>[federated.1r8oud61hccbs71bjx3vr1oj0svb].[Calculation_1007]</cols>
-      </table>
-      <simple-id uuid='{A1000004-0000-0000-0000-000000000004}' />
-    </worksheet>
-    <worksheet name='KPI summary'>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='KPI summary' name='federated.kpi_summ01' />
-          </datasources>
-          <datasource-dependencies datasource='federated.kpi_summ01'>
-            <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal' />
+          <datasource-dependencies datasource='federated.head01'>
+            <column caption='Row id' datatype='integer' name='[row_id]' role='dimension' type='ordinal' />
+            <column caption='Measure' datatype='string' name='[measure]' role='dimension' type='nominal' />
             <column datatype='real' default-format='#,##0.######' name='[value]' role='measure' type='quantitative' />
-            <column-instance column='[metric]' derivation='None' name='[none:metric:nk]' pivot='key' type='nominal' />
-            <column-instance column='[value]' derivation='Avg' name='[avg:value:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[row_id]' derivation='None' name='[none:row_id:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[measure]' derivation='None' name='[none:measure:nk]' pivot='key' type='nominal' />
+            <column-instance column='[value]' derivation='Sum' name='[sum:value:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
           <aggregation value='true' />
         </view>
@@ -752,7 +304,7 @@
             </view>
             <mark class='Text' />
             <encodings>
-              <text column='[federated.kpi_summ01].[avg:value:qk]' />
+              <text column='[federated.head01].[sum:value:qk]' />
             </encodings>
             <style>
               <style-rule element='mark'>
@@ -762,10 +314,192 @@
             </style>
           </pane>
         </panes>
-        <rows>[federated.kpi_summ01].[none:metric:nk]</rows>
-        <cols />
+        <rows>[federated.head01].[none:row_id:ok]</rows>
+        <cols>[federated.head01].[none:measure:nk]</cols>
       </table>
-      <simple-id uuid='{A1000009-0000-0000-0000-000000000009}' />
+      <simple-id uuid='{C0000001-0000-0000-0000-000000000001}' />
+    </worksheet>
+    <worksheet name='Schema (info)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Feature schema (info)' name='federated.cells_schema' />
+          </datasources>
+          <datasource-dependencies datasource='federated.cells_schema'>
+            <column datatype='string' name='[Feature]' role='dimension' type='nominal' />
+            <column caption='Stat rank' datatype='integer' name='[stat_rank]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[stat]' role='dimension' type='nominal' />
+            <column datatype='string' name='[cell]' role='dimension' type='nominal' />
+            <column-instance column='[Feature]' derivation='None' name='[none:Feature:nk]' pivot='key' type='nominal' />
+            <column-instance column='[stat_rank]' derivation='None' name='[none:stat_rank:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[stat]' derivation='None' name='[none:stat:nk]' pivot='key' type='nominal' />
+            <column-instance column='[cell]' derivation='Attribute' name='[attr:cell:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.cells_schema].[attr:cell:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.cells_schema].[none:Feature:nk]</rows>
+        <cols>([federated.cells_schema].[none:stat_rank:ok] / [federated.cells_schema].[none:stat:nk])</cols>
+      </table>
+      <simple-id uuid='{C0000002-0000-0000-0000-000000000002}' />
+    </worksheet>
+    <worksheet name='Describe table'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Feature stats (describe)' name='federated.cells_stats01' />
+          </datasources>
+          <datasource-dependencies datasource='federated.cells_stats01'>
+            <column datatype='string' name='[Feature]' role='dimension' type='nominal' />
+            <column caption='Stat rank' datatype='integer' name='[stat_rank]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[stat]' role='dimension' type='nominal' />
+            <column datatype='string' name='[cell]' role='dimension' type='nominal' />
+            <column-instance column='[Feature]' derivation='None' name='[none:Feature:nk]' pivot='key' type='nominal' />
+            <column-instance column='[stat_rank]' derivation='None' name='[none:stat_rank:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[stat]' derivation='None' name='[none:stat:nk]' pivot='key' type='nominal' />
+            <column-instance column='[cell]' derivation='Attribute' name='[attr:cell:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.cells_stats01].[attr:cell:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.cells_stats01].[none:Feature:nk]</rows>
+        <cols>([federated.cells_stats01].[none:stat_rank:ok] / [federated.cells_stats01].[none:stat:nk])</cols>
+      </table>
+      <simple-id uuid='{C0000003-0000-0000-0000-000000000003}' />
+    </worksheet>
+    <worksheet name='Histograms with skew flags'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Feature histogram bins (ML)' name='federated.ml02_hist' />
+          </datasources>
+          <datasource-dependencies datasource='federated.ml02_hist'>
+            <column caption='Feature name' datatype='string' name='[Feature]' role='dimension' type='nominal' />
+            <column caption='Bin index' datatype='integer' name='[bin_index]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[BIN_COUNT]' role='measure' type='quantitative' />
+            <column caption='pandas dtype' datatype='string' name='[pandas_dtype]' role='dimension' type='nominal' />
+            <column datatype='string' name='[skew_label]' role='dimension' type='nominal' />
+            <column-instance column='[Feature]' derivation='None' name='[none:Feature:nk]' pivot='key' type='nominal' />
+            <column-instance column='[bin_index]' derivation='None' name='[none:bin_index:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[BIN_COUNT]' derivation='Sum' name='[sum:BIN_COUNT:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[skew_label]' derivation='None' name='[none:skew_label:nk]' pivot='key' type='nominal' />
+            <column-instance column='[pandas_dtype]' derivation='None' name='[none:pandas_dtype:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.ml02_hist].[sum:BIN_COUNT:qk]' />
+              <tooltip column='[federated.ml02_hist].[none:pandas_dtype:nk]' />
+              <tooltip column='[federated.ml02_hist].[none:skew_label:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.ml02_hist].[none:Feature:nk] / [federated.ml02_hist].[none:skew_label:nk])</rows>
+        <cols>[federated.ml02_hist].[none:bin_index:ok]</cols>
+      </table>
+      <simple-id uuid='{C0000004-0000-0000-0000-000000000004}' />
+    </worksheet>
+    <worksheet name='Ratio features'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Ratio features (bedrooms_ratio histogram)' name='federated.ratio01' />
+          </datasources>
+          <datasource-dependencies datasource='federated.ratio01'>
+            <column datatype='string' name='[Feature]' role='dimension' type='nominal' />
+            <column caption='Bin index' datatype='integer' name='[bin_index]' role='dimension' type='ordinal' />
+            <column caption='Value bin midpoint' datatype='real' default-format='#,##0.000' name='[value_bin_mid]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[count]' role='measure' type='quantitative' />
+            <column-instance column='[Feature]' derivation='None' name='[none:Feature:nk]' pivot='key' type='nominal' />
+            <column-instance column='[bin_index]' derivation='None' name='[none:bin_index:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[value_bin_mid]' derivation='Avg' name='[avg:value_bin_mid:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[count]' derivation='Sum' name='[sum:count:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <tooltip column='[federated.ratio01].[avg:value_bin_mid:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.ratio01].[sum:count:qk]</rows>
+        <cols>([federated.ratio01].[none:Feature:nk] / [federated.ratio01].[none:bin_index:ok])</cols>
+      </table>
+      <simple-id uuid='{C0000006-0000-0000-0000-000000000006}' />
+    </worksheet>
+    <worksheet name='Ratio scatter'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Ratio scatter (bedrooms_ratio vs MedHouseVal)' name='federated.scat01' />
+          </datasources>
+          <datasource-dependencies datasource='federated.scat01'>
+            <column caption='Bedrooms ratio' datatype='real' default-format='#,##0.000' name='[bedrooms_ratio]' role='measure' type='quantitative' />
+            <column caption='Med House Val' datatype='real' default-format='#,##0.00' name='[MedHouseVal]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='false' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+          </pane>
+        </panes>
+        <rows>[federated.scat01].[MedHouseVal]</rows>
+        <cols>[federated.scat01].[bedrooms_ratio]</cols>
+      </table>
+      <simple-id uuid='{C0000007-0000-0000-0000-000000000007}' />
     </worksheet>
     <worksheet name='ML - Correlation matrix'>
       <table>
@@ -807,59 +541,42 @@
       </table>
       <simple-id uuid='{B2000001-0000-0000-0000-000000000001}' />
     </worksheet>
-    <worksheet name='ML - Profiles and distributions'>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='Feature histogram bins (ML)' name='federated.ml02_hist' />
-          </datasources>
-          <datasource-dependencies datasource='federated.ml02_hist'>
-            <column caption='Feature name' datatype='string' name='[Feature]' role='dimension' type='nominal' />
-            <column caption='Value bin midpoint' datatype='real' name='[Value_bin_mid]' role='dimension' type='quantitative' />
-            <column datatype='integer' name='[BIN_COUNT]' role='measure' type='quantitative' />
-            <column caption='pandas dtype' datatype='string' name='[pandas_dtype]' role='dimension' type='nominal' />
-            <column caption='inferred type (pandas)' datatype='string' name='[inferred_type]' role='dimension' type='nominal' />
-            <column datatype='string' name='[skew_label]' role='dimension' type='nominal' />
-            <column datatype='real' name='[skewness]' role='measure' type='quantitative' />
-            <column-instance column='[Feature]' derivation='None' name='[none:Feature:nk]' pivot='key' type='nominal' />
-            <column-instance column='[Value_bin_mid]' derivation='None' name='[none:Value_bin_mid:nk]' pivot='key' type='quantitative' />
-            <column-instance column='[BIN_COUNT]' derivation='Sum' name='[sum:BIN_COUNT:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[skew_label]' derivation='None' name='[none:skew_label:nk]' pivot='key' type='nominal' />
-            <column-instance column='[pandas_dtype]' derivation='None' name='[none:pandas_dtype:nk]' pivot='key' type='nominal' />
-          </datasource-dependencies>
-          <aggregation value='true' />
-        </view>
-        <style />
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Square' />
-            <encodings>
-              <color column='[federated.ml02_hist].[sum:BIN_COUNT:qk]' />
-              <tooltip column='[federated.ml02_hist].[none:pandas_dtype:nk]' />
-              <tooltip column='[federated.ml02_hist].[none:skew_label:nk]' />
-            </encodings>
-          </pane>
-        </panes>
-        <rows>[federated.ml02_hist].[none:Feature:nk]</rows>
-        <cols>[federated.ml02_hist].[none:Value_bin_mid:nk]</cols>
-      </table>
-      <simple-id uuid='{B2000002-0000-0000-0000-000000000002}' />
-    </worksheet>
   </worksheets>
   <dashboards>
     <dashboard name='California Housing Dashboard'>
       <style />
-      <size maxheight='800' maxwidth='1280' minheight='800' minwidth='1280' sizing-mode='fixed' />
-      <datasources>
-        <datasource name='Parameters' />
-      </datasources>
+      <size maxheight='1100' maxwidth='1280' minheight='1100' minwidth='1280' sizing-mode='fixed' />
       <zones>
         <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='15000' id='10' param='horz' type-v2='layout-flow' w='98400' x='800' y='800'>
-            <zone h='13000' id='101' name='KPI summary' w='98400' x='800' y='800'>
+          <zone h='5000' id='5' type='text' w='98400' x='800' y='800'>
+            <formatted-text>
+              <run fontname='Segoe UI' fontsize='12' bold='true'>California Housing - EDA workflow (Geron Ch.2): head / info / describe / hist / ratios / correlate</run>
+            </formatted-text>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='10000' id='10' name='Data preview (head)' w='98400' x='800' y='6000'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='14000' id='20' param='horz' type-v2='layout-flow' w='98400' x='800' y='16400'>
+            <zone h='14000' id='21' name='Schema (info)' w='32800' x='800' y='16400'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='14000' id='22' name='Describe table' w='65600' x='33800' y='16400'>
               <zone-style>
                 <format attr='border-color' value='#000000' />
                 <format attr='border-style' value='none' />
@@ -868,63 +585,40 @@
               </zone-style>
             </zone>
           </zone>
-          <zone h='83000' id='15' param='vert' type-v2='layout-flow' w='98400' x='800' y='16800'>
-            <zone h='41000' id='21' param='horz' type-v2='layout-flow' w='98400' x='800' y='16800'>
-              <zone h='39400' id='222' name='Drivers - Income vs Value' w='34400' x='800' y='17400'>
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                </zone-style>
-              </zone>
-              <zone h='39400' id='223' name='Residuals Map' w='34400' x='36000' y='17400'>
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                </zone-style>
-              </zone>
-              <zone h='39400' id='224' param='vert' type-v2='layout-flow' w='27200' x='71200' y='17400'>
-                <zone h='30000' id='224c' name='Residuals Map' param='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[avg:Calculation_1006:qk]' type='color' w='27200' x='800' y='800'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                  </zone-style>
-                </zone>
-                <zone h='9400' id='225t' type='text' w='27200' x='800' y='31600'>
-                  <formatted-text>
-                    <run fontsize='10'>Residual = median home value minus the average MedHouseVal for coastal vs inland (longitude split at −121°). Cells show AVG(residual) in ~0.2° bins. Warm colors = pricier than belt average; cool = cheaper. MedHouseVal is in hundreds of thousands of dollars ($100k).</run>
-                  </formatted-text>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                  </zone-style>
-                </zone>
-              </zone>
+          <zone h='25000' id='30' param='horz' type-v2='layout-flow' w='98400' x='800' y='30800'>
+            <zone h='25000' id='31' name='Histograms with skew flags' w='98400' x='800' y='30800'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
             </zone>
-            <zone h='41000' id='31' param='horz' type-v2='layout-flow' w='98400' x='800' y='59400'>
-              <zone h='39400' id='332' name='Drivers - Age vs Value' w='49200' x='800' y='59800'>
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                </zone-style>
-              </zone>
-              <zone h='39400' id='333' name='Affordability by Region' w='49200' x='50800' y='59800'>
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                </zone-style>
-              </zone>
+          </zone>
+          <zone h='20000' id='40' param='horz' type-v2='layout-flow' w='98400' x='800' y='56200'>
+            <zone h='20000' id='41' name='Ratio features' w='32800' x='800' y='56200'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='20000' id='42' name='Ratio scatter' w='32800' x='33800' y='56200'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='20000' id='43' name='ML - Correlation matrix' w='32800' x='66800' y='56200'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
             </zone>
           </zone>
           <zone-style>
@@ -937,49 +631,13 @@
       </zones>
       <devicelayouts>
         <devicelayout name='Phone'>
-          <size maxheight='1600' minheight='1600' sizing-mode='vscroll' />
+          <size maxheight='2200' minheight='2200' sizing-mode='vscroll' />
           <zones>
             <zone h='100000' id='701' type-v2='layout-basic' w='100000' x='0' y='0'>
               <zone h='98000' id='702' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
-                <zone fixed-size='160' h='9000' id='711' name='KPI summary' is-fixed='true' w='98400' x='800' y='1000'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='280' h='18000' id='715' name='Drivers - Income vs Value' is-fixed='true' w='98400' x='800' y='11600'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='280' h='18000' id='716' name='Residuals Map' is-fixed='true' w='98400' x='800' y='30200'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='160' h='9800' id='716legend' name='Residuals Map' is-fixed='true' param='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[avg:Calculation_1006:qk]' type='color' w='98400' x='800' y='49100'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='200' h='7400' id='716explain' type='text' w='98400' x='800' y='59600'>
+                <zone fixed-size='80' h='4000' id='710' is-fixed='true' type='text' w='98400' x='800' y='1000'>
                   <formatted-text>
-                    <run fontsize='9'>Residual legend: warm = pricier vs coastal/inland belt avg; cool = cheaper. −121° split. Units: MedHouseVal in $100k.</run>
+                    <run fontname='Segoe UI' fontsize='11' bold='true'>EDA workflow: head / info / describe / hist / ratios / correlate</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -989,7 +647,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='14000' id='717' name='Drivers - Age vs Value' is-fixed='true' w='98400' x='800' y='68200'>
+                <zone fixed-size='200' h='9000' id='711' name='Data preview (head)' is-fixed='true' w='98400' x='800' y='5500'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -998,7 +656,52 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='14000' id='718' name='Affordability by Region' is-fixed='true' w='98400' x='800' y='83200'>
+                <zone fixed-size='200' h='9000' id='712' name='Schema (info)' is-fixed='true' w='98400' x='800' y='15000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='240' h='11000' id='713' name='Describe table' is-fixed='true' w='98400' x='800' y='24500'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='13000' id='714' name='Histograms with skew flags' is-fixed='true' w='98400' x='800' y='36000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='220' h='10000' id='716' name='Ratio features' is-fixed='true' w='98400' x='800' y='49500'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='240' h='11000' id='717' name='Ratio scatter' is-fixed='true' w='98400' x='800' y='60500'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='13000' id='718' name='ML - Correlation matrix' is-fixed='true' w='98400' x='800' y='72500'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1018,18 +721,17 @@
           </zones>
         </devicelayout>
       </devicelayouts>
-      <simple-id uuid='{8E4C2B71-6094-43D9-B7A1-F1DE2ABC9045}' />
+      <simple-id uuid='{D0000001-0000-0000-0000-000000000001}' />
     </dashboard>
   </dashboards>
   <windows source-height='30'>
-    <window class='worksheet' maximized='true' name='Sheet 1'>
+    <window class='worksheet' maximized='true' name='Data preview (head)'>
       <cards>
         <edge name='left'>
           <strip size='160'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
-            <card type='measures' />
           </strip>
         </edge>
         <edge name='top'>
@@ -1044,7 +746,7 @@
           </strip>
         </edge>
       </cards>
-      <simple-id uuid='{2644BAF2-0E2D-41ED-846E-2D895530DC53}' />
+      <simple-id uuid='{E0000001-0000-0000-0000-000000000001}' />
     </window>
     <window class='worksheet' name='ML - Correlation matrix'>
       <cards>
@@ -1072,9 +774,9 @@
           </strip>
         </edge>
       </cards>
-      <simple-id uuid='{E91C4BB2-6013-41D2-9C7F-AABBCCDDEE01}' />
+      <simple-id uuid='{E0000002-0000-0000-0000-000000000002}' />
     </window>
-    <window class='worksheet' name='Residuals Map'>
+    <window class='worksheet' name='Histograms with skew flags'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1095,143 +797,12 @@
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='240'>
-            <card pane-specification-id='0' param='[federated.1r8oud61hccbs71bjx3vr1oj0svb].[avg:Calculation_1006:qk]' type='color' />
+          <strip size='220'>
+            <card pane-specification-id='0' param='[federated.ml02_hist].[sum:BIN_COUNT:qk]' type='color' />
           </strip>
         </edge>
       </cards>
-      <simple-id uuid='{A1000010-0000-0000-0000-000000000010}' />
+      <simple-id uuid='{E0000003-0000-0000-0000-000000000003}' />
     </window>
   </windows>
-  <thumbnails>
-    <thumbnail height='384' name='Sheet 1' width='384'>
-      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
-      fL1A7gBqamqUSqU0PDys8vJyrVu3TplMRsPDw6qoqFA8HldlZaUaGxt19+5dRSIRtba25nts
-      ACgogQxAbW2tamtrv/LacsrKyv7r5wEAy+M5CQBYigAAgKUIAABYigAAgKUIAABYigAAgKUI
-      AABYigAAgKUIAABYigAAgKUIAABYigAAgKUIAABYigAAgKUIAABYigAAgKUIAABYigAAgKUI
-      AABYigAAgKUIAABYigAAgKUIAABYKpzvAZYzOzurjo4OpVIptbW1qaGhQUePHtXi4qL27Nmj
-      dDqts2fP6sc//rEcx9H58+cViUS0bdu2fI8OAAUjkAFIpVLau3evioqK9K9//Uv37t1Tc3Oz
-      EomEjh8/ri1btujmzZuanp5WLBZTf3+/qqur8z02ABSUQAagqqpKCwsLOnjwoFpaWjQ8PKzm
-      5maVlJTIGCNJ2rp1q7q7u7Vx40bF43Gl02lJUiaTke/7kiTf97OvA0Dwmdye3RgtLCxk14EM
-      wOLiot599119//vfV01NjW7duqVUKqXS0lJ5nidJisViGhgYUE9Pj3bs2KGuri5JUjj8xSV5
-      nifXdfNyDQCwck5uz+44ikaj2XUgA3DhwgWVlZVpYGBA09PTeuqpp/TRRx+psrJSjY2N2ePW
-      rVunGzduqLi4OH/DAkCBCmQA2tratGHDBklSUVGRYrGY9uzZo8XFRdXW1srzPPm+r1AopJaW
-      FhUXF2vXrl15nhoACksgA1BSUqKSkpIlr61evTr78cOPeR58/OXjAQD/He8DAABLEQAAsBQB
-      AABLEQAAsBQBAABLEQAAsBQBAABLEQAAsBQBAABLEQAAsBQBAABLEQAAsBQBAABLEQAAsBQB
-      AABLEQAAsBQBAABLEQAAsBQBAABLEQAAsBQBAABLEQAAsFRgA2CMke/72bXnecpkMjLGfOVz
-      vu8vWQMAvlk43wMsZ3FxUR999JE8z9Nrr72m0dFRnT17VsXFxaqvr1dVVZU+/PBDvf322wqF
-      Qjpy5IjKysq0e/fufI8OAAUjkAFIp9N64YUXdPr0aUnS8PCwtm/frtraWh0/flyxWExFRUUa
-      GxtTTU2NZmdnVVRU9JXzfHmnAAC2e/ieGMgArFq1asl606ZNeu+99xQOh/XCCy9IkrZs2aKe
-      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
-    </thumbnail>
-  </thumbnails>
 </workbook>

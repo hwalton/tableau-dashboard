@@ -217,17 +217,10 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
+# Generated data — keep all CSVs untracked (see .cursor/rules/csv-gitignore.mdc)
 *.csv
-
-# Small CSVs wired in Book.twb — tracked so Desktop can open without running Python first
-!housing_head_long.csv
-!housing_head.csv
-!feature_describe.csv
-!feature_correlations_full.csv
-!feature_histogram_bins.csv
-!housing_skew_transforms.csv
-!housing_ratio_features.csv
-!housing_ratio_scatter.csv
 .cursor/
 *.md
 !README.md
+
+*.twbr
