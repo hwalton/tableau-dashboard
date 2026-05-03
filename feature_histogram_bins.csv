@@ -1,0 +1,265 @@
+Feature,bin_index,Value_bin_mid,BIN_COUNT,pandas_dtype,inferred_type,skew_label,skewness
+AveBedrms,0,0.7385,18658,float64,floating,strong right tail,31.317
+AveBedrms,1,1.5985,1752,float64,floating,strong right tail,31.317
+AveBedrms,2,2.4415,112,float64,floating,strong right tail,31.317
+AveBedrms,3,3.285,41,float64,floating,strong right tail,31.317
+AveBedrms,4,4.1285,21,float64,floating,strong right tail,31.317
+AveBedrms,5,4.9715,20,float64,floating,strong right tail,31.317
+AveBedrms,6,5.8149999999999995,12,float64,floating,strong right tail,31.317
+AveBedrms,7,6.6585,5,float64,floating,strong right tail,31.317
+AveBedrms,8,7.5015,2,float64,floating,strong right tail,31.317
+AveBedrms,9,8.344999999999999,5,float64,floating,strong right tail,31.317
+AveBedrms,10,9.1885,2,float64,floating,strong right tail,31.317
+AveBedrms,11,10.0315,3,float64,floating,strong right tail,31.317
+AveBedrms,12,10.875,2,float64,floating,strong right tail,31.317
+AveBedrms,13,11.7185,1,float64,floating,strong right tail,31.317
+AveBedrms,14,14.2485,1,float64,floating,strong right tail,31.317
+AveBedrms,15,15.0915,1,float64,floating,strong right tail,31.317
+AveBedrms,16,26.055,1,float64,floating,strong right tail,31.317
+AveBedrms,17,33.644999999999996,1,float64,floating,strong right tail,31.317
+AveOccup,0,15.604,20631,float64,floating,strong right tail,97.6396
+AveOccup,1,47.291,3,float64,floating,strong right tail,97.6396
+AveOccup,2,78.357,2,float64,floating,strong right tail,97.6396
+AveOccup,3,233.6875,1,float64,floating,strong right tail,97.6396
+AveOccup,4,513.282,1,float64,floating,strong right tail,97.6396
+AveOccup,5,606.48,1,float64,floating,strong right tail,97.6396
+AveOccup,6,1227.8000000000002,1,float64,floating,strong right tail,97.6396
+AveRooms,0,2.539,4752,float64,floating,strong right tail,20.6979
+AveRooms,1,6.136,15074,float64,floating,strong right tail,20.6979
+AveRooms,2,9.6625,655,float64,floating,strong right tail,20.6979
+AveRooms,3,13.189,50,float64,floating,strong right tail,20.6979
+AveRooms,4,16.7155,28,float64,floating,strong right tail,20.6979
+AveRooms,5,20.2425,26,float64,floating,strong right tail,20.6979
+AveRooms,6,23.769,16,float64,floating,strong right tail,20.6979
+AveRooms,7,27.2955,12,float64,floating,strong right tail,20.6979
+AveRooms,8,30.822000000000003,5,float64,floating,strong right tail,20.6979
+AveRooms,9,34.3485,5,float64,floating,strong right tail,20.6979
+AveRooms,10,37.875,5,float64,floating,strong right tail,20.6979
+AveRooms,11,41.4015,2,float64,floating,strong right tail,20.6979
+AveRooms,12,48.455,1,float64,floating,strong right tail,20.6979
+AveRooms,13,51.9815,3,float64,floating,strong right tail,20.6979
+AveRooms,14,55.507999999999996,1,float64,floating,strong right tail,20.6979
+AveRooms,15,59.0345,1,float64,floating,strong right tail,20.6979
+AveRooms,16,62.561,2,float64,floating,strong right tail,20.6979
+AveRooms,17,133.0925,1,float64,floating,strong right tail,20.6979
+AveRooms,18,140.14600000000002,1,float64,floating,strong right tail,20.6979
+HouseAge,0,1.6119999999999999,62,float64,floating,~ symmetric,0.0603
+HouseAge,1,2.9124999999999996,62,float64,floating,~ symmetric,0.0603
+HouseAge,2,4.1875,191,float64,floating,~ symmetric,0.0603
+HouseAge,3,5.4625,404,float64,floating,~ symmetric,0.0603
+HouseAge,4,6.7375,175,float64,floating,~ symmetric,0.0603
+HouseAge,5,8.0125,206,float64,floating,~ symmetric,0.0603
+HouseAge,6,9.287500000000001,205,float64,floating,~ symmetric,0.0603
+HouseAge,7,10.5625,518,float64,floating,~ symmetric,0.0603
+HouseAge,8,11.837499999999999,238,float64,floating,~ symmetric,0.0603
+HouseAge,9,13.1125,302,float64,floating,~ symmetric,0.0603
+HouseAge,10,14.3875,924,float64,floating,~ symmetric,0.0603
+HouseAge,11,15.662500000000001,771,float64,floating,~ symmetric,0.0603
+HouseAge,12,16.9375,698,float64,floating,~ symmetric,0.0603
+HouseAge,13,18.2125,570,float64,floating,~ symmetric,0.0603
+HouseAge,14,19.4875,967,float64,floating,~ symmetric,0.0603
+HouseAge,15,20.7625,446,float64,floating,~ symmetric,0.0603
+HouseAge,16,22.0375,399,float64,floating,~ symmetric,0.0603
+HouseAge,17,23.3125,448,float64,floating,~ symmetric,0.0603
+HouseAge,18,24.5875,1044,float64,floating,~ symmetric,0.0603
+HouseAge,19,25.8625,619,float64,floating,~ symmetric,0.0603
+HouseAge,20,27.1375,488,float64,floating,~ symmetric,0.0603
+HouseAge,21,28.4125,932,float64,floating,~ symmetric,0.0603
+HouseAge,22,29.6875,476,float64,floating,~ symmetric,0.0603
+HouseAge,23,30.9625,458,float64,floating,~ symmetric,0.0603
+HouseAge,24,32.2375,565,float64,floating,~ symmetric,0.0603
+HouseAge,25,33.5125,1304,float64,floating,~ symmetric,0.0603
+HouseAge,26,34.787499999999994,824,float64,floating,~ symmetric,0.0603
+HouseAge,27,36.0625,862,float64,floating,~ symmetric,0.0603
+HouseAge,28,37.337500000000006,537,float64,floating,~ symmetric,0.0603
+HouseAge,29,38.6125,763,float64,floating,~ symmetric,0.0603
+HouseAge,30,39.8875,304,float64,floating,~ symmetric,0.0603
+HouseAge,31,41.162499999999994,296,float64,floating,~ symmetric,0.0603
+HouseAge,32,42.4375,721,float64,floating,~ symmetric,0.0603
+HouseAge,33,43.712500000000006,356,float64,floating,~ symmetric,0.0603
+HouseAge,34,44.9875,294,float64,floating,~ symmetric,0.0603
+HouseAge,35,46.2625,245,float64,floating,~ symmetric,0.0603
+HouseAge,36,47.537499999999994,375,float64,floating,~ symmetric,0.0603
+HouseAge,37,48.8125,134,float64,floating,~ symmetric,0.0603
+HouseAge,38,50.087500000000006,136,float64,floating,~ symmetric,0.0603
+HouseAge,39,51.3625,1321,float64,floating,~ symmetric,0.0603
+Latitude,0,32.653,737,float64,floating,~ symmetric,0.466
+Latitude,1,32.8925,596,float64,floating,~ symmetric,0.466
+Latitude,2,33.128,336,float64,floating,~ symmetric,0.466
+Latitude,3,33.3635,127,float64,floating,~ symmetric,0.466
+Latitude,4,33.5985,689,float64,floating,~ symmetric,0.466
+Latitude,5,33.834,3021,float64,floating,~ symmetric,0.466
+Latitude,6,34.0695,4167,float64,floating,~ symmetric,0.466
+Latitude,7,34.3045,1110,float64,floating,~ symmetric,0.466
+Latitude,8,34.5395,300,float64,floating,~ symmetric,0.466
+Latitude,9,34.7745,137,float64,floating,~ symmetric,0.466
+Latitude,10,35.010000000000005,115,float64,floating,~ symmetric,0.466
+Latitude,11,35.2455,195,float64,floating,~ symmetric,0.466
+Latitude,12,35.4805,186,float64,floating,~ symmetric,0.466
+Latitude,13,35.716,75,float64,floating,~ symmetric,0.466
+Latitude,14,35.9515,50,float64,floating,~ symmetric,0.466
+Latitude,15,36.1865,163,float64,floating,~ symmetric,0.466
+Latitude,16,36.4215,189,float64,floating,~ symmetric,0.466
+Latitude,17,36.6565,435,float64,floating,~ symmetric,0.466
+Latitude,18,36.891999999999996,454,float64,floating,~ symmetric,0.466
+Latitude,19,37.1275,214,float64,floating,~ symmetric,0.466
+Latitude,20,37.3625,1166,float64,floating,~ symmetric,0.466
+Latitude,21,37.598,1021,float64,floating,~ symmetric,0.466
+Latitude,22,37.8335,1766,float64,floating,~ symmetric,0.466
+Latitude,23,38.0685,759,float64,floating,~ symmetric,0.466
+Latitude,24,38.3035,417,float64,floating,~ symmetric,0.466
+Latitude,25,38.5385,729,float64,floating,~ symmetric,0.466
+Latitude,26,38.774,368,float64,floating,~ symmetric,0.466
+Latitude,27,39.0095,226,float64,floating,~ symmetric,0.466
+Latitude,28,39.2445,225,float64,floating,~ symmetric,0.466
+Latitude,29,39.480000000000004,103,float64,floating,~ symmetric,0.466
+Latitude,30,39.7155,127,float64,floating,~ symmetric,0.466
+Latitude,31,39.9505,35,float64,floating,~ symmetric,0.466
+Latitude,32,40.1855,53,float64,floating,~ symmetric,0.466
+Latitude,33,40.4205,68,float64,floating,~ symmetric,0.466
+Latitude,34,40.656,118,float64,floating,~ symmetric,0.466
+Latitude,35,40.8915,85,float64,floating,~ symmetric,0.466
+Latitude,36,41.1265,17,float64,floating,~ symmetric,0.466
+Latitude,37,41.361999999999995,18,float64,floating,~ symmetric,0.466
+Latitude,38,41.5975,13,float64,floating,~ symmetric,0.466
+Latitude,39,41.8325,30,float64,floating,~ symmetric,0.466
+Longitude,0,-124.2295,91,float64,floating,~ symmetric,-0.2978
+Longitude,1,-123.9735,40,float64,floating,~ symmetric,-0.2978
+Longitude,2,-123.7225,32,float64,floating,~ symmetric,-0.2978
+Longitude,3,-123.47149999999999,27,float64,floating,~ symmetric,-0.2978
+Longitude,4,-123.2205,56,float64,floating,~ symmetric,-0.2978
+Longitude,5,-122.9695,91,float64,floating,~ symmetric,-0.2978
+Longitude,6,-122.7185,311,float64,floating,~ symmetric,-0.2978
+Longitude,7,-122.4675,1095,float64,floating,~ symmetric,-0.2978
+Longitude,8,-122.2165,1552,float64,floating,~ symmetric,-0.2978
+Longitude,9,-121.96549999999999,1676,float64,floating,~ symmetric,-0.2978
+Longitude,10,-121.7145,601,float64,floating,~ symmetric,-0.2978
+Longitude,11,-121.4635,735,float64,floating,~ symmetric,-0.2978
+Longitude,12,-121.2125,687,float64,floating,~ symmetric,-0.2978
+Longitude,13,-120.9615,448,float64,floating,~ symmetric,-0.2978
+Longitude,14,-120.7105,251,float64,floating,~ symmetric,-0.2978
+Longitude,15,-120.45949999999999,287,float64,floating,~ symmetric,-0.2978
+Longitude,16,-120.2085,146,float64,floating,~ symmetric,-0.2978
+Longitude,17,-119.9575,211,float64,floating,~ symmetric,-0.2978
+Longitude,18,-119.7065,558,float64,floating,~ symmetric,-0.2978
+Longitude,19,-119.4555,199,float64,floating,~ symmetric,-0.2978
+Longitude,20,-119.2045,380,float64,floating,~ symmetric,-0.2978
+Longitude,21,-118.95349999999999,403,float64,floating,~ symmetric,-0.2978
+Longitude,22,-118.7025,217,float64,floating,~ symmetric,-0.2978
+Longitude,23,-118.4515,1871,float64,floating,~ symmetric,-0.2978
+Longitude,24,-118.2005,3025,float64,floating,~ symmetric,-0.2978
+Longitude,25,-117.9495,1891,float64,floating,~ symmetric,-0.2978
+Longitude,26,-117.6985,840,float64,floating,~ symmetric,-0.2978
+Longitude,27,-117.44749999999999,452,float64,floating,~ symmetric,-0.2978
+Longitude,28,-117.1965,1444,float64,floating,~ symmetric,-0.2978
+Longitude,29,-116.9455,664,float64,floating,~ symmetric,-0.2978
+Longitude,30,-116.6945,49,float64,floating,~ symmetric,-0.2978
+Longitude,31,-116.4435,95,float64,floating,~ symmetric,-0.2978
+Longitude,32,-116.1925,58,float64,floating,~ symmetric,-0.2978
+Longitude,33,-115.94149999999999,22,float64,floating,~ symmetric,-0.2978
+Longitude,34,-115.6905,38,float64,floating,~ symmetric,-0.2978
+Longitude,35,-115.4395,65,float64,floating,~ symmetric,-0.2978
+Longitude,36,-115.1885,1,float64,floating,~ symmetric,-0.2978
+Longitude,37,-114.9375,3,float64,floating,~ symmetric,-0.2978
+Longitude,38,-114.6865,23,float64,floating,~ symmetric,-0.2978
+Longitude,39,-114.4355,5,float64,floating,~ symmetric,-0.2978
+MedHouseVal,0,0.20800000000000002,12,float64,floating,right-skew,0.9778
+MedHouseVal,1,0.3315,24,float64,floating,right-skew,0.9778
+MedHouseVal,2,0.453,205,float64,floating,right-skew,0.9778
+MedHouseVal,3,0.5745,636,float64,floating,right-skew,0.9778
+MedHouseVal,4,0.6955,821,float64,floating,right-skew,0.9778
+MedHouseVal,5,0.8165,807,float64,floating,right-skew,0.9778
+MedHouseVal,6,0.938,1090,float64,floating,right-skew,0.9778
+MedHouseVal,7,1.0595,894,float64,floating,right-skew,0.9778
+MedHouseVal,8,1.1805,998,float64,floating,right-skew,0.9778
+MedHouseVal,9,1.3015,880,float64,floating,right-skew,0.9778
+MedHouseVal,10,1.423,1106,float64,floating,right-skew,0.9778
+MedHouseVal,11,1.5445,1115,float64,floating,right-skew,0.9778
+MedHouseVal,12,1.6655,1165,float64,floating,right-skew,0.9778
+MedHouseVal,13,1.7865,988,float64,floating,right-skew,0.9778
+MedHouseVal,14,1.908,967,float64,floating,right-skew,0.9778
+MedHouseVal,15,2.0295,651,float64,floating,right-skew,0.9778
+MedHouseVal,16,2.1505,785,float64,floating,right-skew,0.9778
+MedHouseVal,17,2.2714999999999996,806,float64,floating,right-skew,0.9778
+MedHouseVal,18,2.393,670,float64,floating,right-skew,0.9778
+MedHouseVal,19,2.5145,538,float64,floating,right-skew,0.9778
+MedHouseVal,20,2.6355000000000004,546,float64,floating,right-skew,0.9778
+MedHouseVal,21,2.757,529,float64,floating,right-skew,0.9778
+MedHouseVal,22,2.8785,400,float64,floating,right-skew,0.9778
+MedHouseVal,23,2.9995000000000003,294,float64,floating,right-skew,0.9778
+MedHouseVal,24,3.1205,265,float64,floating,right-skew,0.9778
+MedHouseVal,25,3.242,302,float64,floating,right-skew,0.9778
+MedHouseVal,26,3.3635,325,float64,floating,right-skew,0.9778
+MedHouseVal,27,3.4844999999999997,347,float64,floating,right-skew,0.9778
+MedHouseVal,28,3.6055,236,float64,floating,right-skew,0.9778
+MedHouseVal,29,3.727,199,float64,floating,right-skew,0.9778
+MedHouseVal,30,3.8484999999999996,155,float64,floating,right-skew,0.9778
+MedHouseVal,31,3.9695,162,float64,floating,right-skew,0.9778
+MedHouseVal,32,4.0905000000000005,126,float64,floating,right-skew,0.9778
+MedHouseVal,33,4.212,118,float64,floating,right-skew,0.9778
+MedHouseVal,34,4.3335,113,float64,floating,right-skew,0.9778
+MedHouseVal,35,4.4544999999999995,122,float64,floating,right-skew,0.9778
+MedHouseVal,36,4.5755,78,float64,floating,right-skew,0.9778
+MedHouseVal,37,4.697,66,float64,floating,right-skew,0.9778
+MedHouseVal,38,4.8185,61,float64,floating,right-skew,0.9778
+MedHouseVal,39,4.9395,1038,float64,floating,right-skew,0.9778
+MedInc,0,0.6735,77,float64,floating,strong right tail,1.6467
+MedInc,1,1.0435,288,float64,floating,strong right tail,1.6467
+MedInc,2,1.4060000000000001,638,float64,floating,strong right tail,1.6467
+MedInc,3,1.7685,1244,float64,floating,strong right tail,1.6467
+MedInc,4,2.131,1669,float64,floating,strong right tail,1.6467
+MedInc,5,2.4935,1901,float64,floating,strong right tail,1.6467
+MedInc,6,2.856,1812,float64,floating,strong right tail,1.6467
+MedInc,7,3.2184999999999997,2054,float64,floating,strong right tail,1.6467
+MedInc,8,3.581,1874,float64,floating,strong right tail,1.6467
+MedInc,9,3.9435000000000002,1610,float64,floating,strong right tail,1.6467
+MedInc,10,4.306,1426,float64,floating,strong right tail,1.6467
+MedInc,11,4.6685,1188,float64,floating,strong right tail,1.6467
+MedInc,12,5.031,1013,float64,floating,strong right tail,1.6467
+MedInc,13,5.3934999999999995,819,float64,floating,strong right tail,1.6467
+MedInc,14,5.756,596,float64,floating,strong right tail,1.6467
+MedInc,15,6.1185,562,float64,floating,strong right tail,1.6467
+MedInc,16,6.481,392,float64,floating,strong right tail,1.6467
+MedInc,17,6.843500000000001,291,float64,floating,strong right tail,1.6467
+MedInc,18,7.2059999999999995,199,float64,floating,strong right tail,1.6467
+MedInc,19,7.5685,179,float64,floating,strong right tail,1.6467
+MedInc,20,7.9315,169,float64,floating,strong right tail,1.6467
+MedInc,21,8.294,124,float64,floating,strong right tail,1.6467
+MedInc,22,8.6565,84,float64,floating,strong right tail,1.6467
+MedInc,23,9.018999999999998,50,float64,floating,strong right tail,1.6467
+MedInc,24,9.381499999999999,36,float64,floating,strong right tail,1.6467
+MedInc,25,9.744,36,float64,floating,strong right tail,1.6467
+MedInc,26,10.1065,58,float64,floating,strong right tail,1.6467
+MedInc,27,10.469000000000001,48,float64,floating,strong right tail,1.6467
+MedInc,28,10.8315,46,float64,floating,strong right tail,1.6467
+MedInc,29,11.193999999999999,23,float64,floating,strong right tail,1.6467
+MedInc,30,11.5565,14,float64,floating,strong right tail,1.6467
+MedInc,31,11.919,10,float64,floating,strong right tail,1.6467
+MedInc,32,12.2815,15,float64,floating,strong right tail,1.6467
+MedInc,33,12.643999999999998,9,float64,floating,strong right tail,1.6467
+MedInc,34,13.006499999999999,13,float64,floating,strong right tail,1.6467
+MedInc,35,13.369,10,float64,floating,strong right tail,1.6467
+MedInc,36,13.7315,5,float64,floating,strong right tail,1.6467
+MedInc,37,14.094000000000001,1,float64,floating,strong right tail,1.6467
+MedInc,38,14.4565,5,float64,floating,strong right tail,1.6467
+MedInc,39,14.818999999999999,52,float64,floating,strong right tail,1.6467
+Population,0,431.148,6698,float64,floating,strong right tail,4.9359
+Population,1,1340.9625,9158,float64,floating,strong right tail,4.9359
+Population,2,2232.9375,2932,float64,floating,strong right tail,4.9359
+Population,3,3124.9125000000004,1028,float64,floating,strong right tail,4.9359
+Population,4,4016.8875,380,float64,floating,strong right tail,4.9359
+Population,5,4908.8625,188,float64,floating,strong right tail,4.9359
+Population,6,5800.8375,86,float64,floating,strong right tail,4.9359
+Population,7,6692.8125,57,float64,floating,strong right tail,4.9359
+Population,8,7584.7875,54,float64,floating,strong right tail,4.9359
+Population,9,8476.7625,20,float64,floating,strong right tail,4.9359
+Population,10,9368.7375,11,float64,floating,strong right tail,4.9359
+Population,11,10260.712500000001,10,float64,floating,strong right tail,4.9359
+Population,12,11152.6875,4,float64,floating,strong right tail,4.9359
+Population,13,12044.662499999999,6,float64,floating,strong right tail,4.9359
+Population,14,12936.6375,2,float64,floating,strong right tail,4.9359
+Population,15,14720.587500000001,1,float64,floating,strong right tail,4.9359
+Population,16,15612.5625,1,float64,floating,strong right tail,4.9359
+Population,17,16504.5375,2,float64,floating,strong right tail,4.9359
+Population,18,28992.1875,1,float64,floating,strong right tail,4.9359
+Population,19,35236.0125,1,float64,floating,strong right tail,4.9359
